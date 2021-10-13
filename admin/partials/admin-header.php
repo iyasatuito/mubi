@@ -28,7 +28,6 @@
 	<!-- Custom CSS -->
 	<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/admin.css">
-    <link rel="stylesheet" type="text/css" href="../assets/css/site.css">
     
     <!-- Custom JS -->
     <script type="text/javascript" src="../assets/js/custom.js"></script>
