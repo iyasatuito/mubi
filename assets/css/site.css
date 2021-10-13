@@ -1,1 +1,73 @@
 /* BETTY */
+
+/* 
+*
+* Dark Theme
+*
+*/
+
+* {
+    color: white;
+}
+
+a {
+    color: white;
+}
+
+main {
+    background-color: #202020;
+}
+
+.btn-mubi {
+    background-color: #E1AD01;
+}
+
+.btn-mubi:hover {
+    background-color: #E15201;
+}
+
+/* 
+*
+* NAV
+*
+*/
+
+.navbar a {
+    color: white;
+}
+
+.navbar a:hover {
+    color: #E1AD01;
+}
+
+.logo {
+    height: 25px;
+}
+
+/* 
+*
+* FORM
+*
+*/
+
+.form-group {
+    padding: 10px 0;
+}
+
+.footer-copyright {
+    color: #202020;
+}
+
+/* 
+*
+* FOOTER
+*
+*/
+
+footer {
+    background-color: #E1AD01;
+}
+
+.footer-copyright {
+    color: #202020;
+}

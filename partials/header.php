@@ -17,7 +17,8 @@
 	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@500;600&family=Playfair+Display:wght@900&family=Roboto&display=swap" rel="stylesheet">
 
     <!-- jQuery -->
-	<script type="text/javascript" src="assets/js/jquery-3.2.1.min.js"></script>
+	<!-- <script src="assets/js/jquery-3.2.1.min.js"></script> -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="assets/bootstrap-5.1.3-dist/css/bootstrap.min.css">
@@ -42,6 +43,9 @@
 <body>
 
 <main>
-	<nav>
-        Nav
-    </nav>
+	<nav class="navbar">
+		<div class="container">
+			<a class="nav-link active" aria-current="page" href="#"><img class="logo" src="assets/img/logo.png" alt="mubi"></a>
+			<a class="nav-link" href="#">Login</a>
+		</div>
+	</nav>
