@@ -1,1 +1,387 @@
 /* BETTY */
+
+/* 
+*
+* Theme
+*
+*/
+
+* {
+    color: white;
+}
+
+a {
+    color: white;
+}
+
+main {
+    background-color: #202020;
+}
+
+.btn-mubi {
+    background-color: #E1AD01;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.btn-mubi:hover {
+    background-color: #E15201;
+}
+
+/* 
+*
+* NAV
+*
+*/
+
+.navbar {
+    padding: 15px 0 18px 0;
+}
+
+.navbar a {
+    color: white;
+}
+
+.navbar a:hover {
+    color: #E1AD01;
+}
+
+.logo {
+    height: 25px;
+}
+
+/* 
+*
+* FORM
+*
+*/
+
+.form-group {
+    padding: 10px 0;
+}
+
+.footer-copyright {
+    color: #202020;
+}
+
+/* 
+*
+* FOOTER
+*
+*/
+
+footer {
+    background-color: #E1AD01;
+}
+
+.footer-copyright {
+    color: #202020;
+}
+
+/* 
+*
+* Home
+*
+*/
+
+#home .container {
+    width: 75%;
+    padding: 50px 0;
+}
+
+#home .movie-banner {
+    width: 100%;
+    position: relative;
+    margin-top: 30px;
+}
+
+#home .movie-banner img {
+    width: 100%;
+}
+
+#home .movie-banner .overlay {
+    width: 40%;
+    position: absolute;
+    bottom: 70px;
+    left: 100px;
+}
+
+#home .movie-banner .overlay  a {
+    margin-top: 20px;
+}
+
+#home .home-nav {
+    background-color: #F2E9CA;
+    text-align: center;
+    color: #202020;
+    padding: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+/* 
+*
+* Movie
+*
+*/
+
+#movie .container {
+    width: 75%;
+    padding: 50px 0;
+}
+
+#movie .banner {
+    position: relative;
+    width: 100%;
+}
+
+#movie .banner .video-cover {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    position: absolute;
+}
+
+#movie .banner .play-btn {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    z-index: 100;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#movie .poster {
+    width: 100%;
+}
+
+#movie .label {
+    color: #E1AD01;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#movie .title {
+    font-family: 'Bebas Neue', sans-serif;
+    text-transform: uppercase;
+    font-size: 3em;
+    letter-spacing: 1px;
+}
+
+#movie .details {
+    padding-bottom: 6px;
+}
+
+#movie .booking {
+    padding-top: 10px;
+}
+
+.subheading {
+    font-family: 'Bebas Neue', sans-serif;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    margin-top: 20px;
+}
+
+#movie #date option,
+#movie #date {
+    color: #202020;
+    padding: 5px 15px;
+}
+
+#movie .times {
+    margin-top: 5px;
+}
+
+#movie .time {
+    font-family: 'Bebas Neue', sans-serif;
+    color: #E1AD01;
+    padding: 5px 20px;
+    border: solid white 1px;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+/* 
+*
+* Booking
+*
+*/
+
+#booking .container {
+    width: 86%;
+    margin: 60px auto;
+}
+
+#booking .summary-container {
+    background-color: #F2E9CA;
+    margin-bottom: 30px;
+}
+
+#booking .countdown {
+    background-color: #fff;
+    padding: 10px 30px;
+}
+
+#booking .summary {
+    padding: 30px;
+    padding-bottom: 35px;
+    text-transform: uppercase;
+}
+
+#booking .countdown span {
+    color: #202020 !important;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-size: .9em;
+}
+
+#booking .label {
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-size: .9em;
+}
+
+#booking .label,
+#booking .text,
+#booking .total {  
+    color: #202020;
+}
+
+#booking .page-title {
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5em;
+    padding-bottom: 20px;
+}
+
+#booking .title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2em;
+    color: #202020;
+    line-height: 1em;
+    padding: 8px 0;
+}
+
+#booking .total {
+    font-weight: 700;
+}
+
+#booking hr {
+    background-color: #E1AD01;
+    height: 2px;
+}
+
+#booking .btn-mubi {
+    width: 100%;
+    margin-top: 20px;
+}
+
+#booking .ticket-items {
+    width: 80%;
+}
+
+#booking .ticket-items td {
+    padding: 5px 0;
+}
+
+#booking .ticket-items input {
+    width: 50px;
+    color: #202020;
+    text-align: center;
+}
+
+#booking .number {
+    font-family: 'Playfair Display', serif;
+    font-size: 3em;
+    color: #E1AD01;
+    line-height: .2em;
+}
+
+#booking .subheading {
+    margin-top: 0;
+}
+
+#booking .step2 {
+    margin-top: 30px;
+}
+
+#booking .seats .seat {
+    height: 30px;
+    width: 30px;
+    border: 3px solid #202020;
+    background-color: #F2E9CA;
+}
+
+/* 
+*
+* Ticket
+*
+*/
+
+#tickets .container {
+    
+}
+
+#tickets .page-title {
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5em;
+    padding-bottom: 20px;
+}
+
+#tickets .description {
+    width: 90%;
+}
+
+#tickets .container {
+    margin: 50px auto;
+    /* margin-bottom: 100px; */
+    width: 70%;
+    min-height: 70vh;
+}
+
+#tickets .ticket {
+    padding: 40px;
+    background-color: #F2E9CA;
+    text-align: center;
+}
+
+#tickets .ticket img {
+    width: 140px;
+}
+
+#tickets .ticket .title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.7em;
+    padding: 20px 0 10px 0;
+    line-height: 1em;
+    color: #202020;
+}
+
+#tickets .ticket .description {
+    text-transform: uppercase;    
+    color: #202020;
+}
+
+#tickets .ticket-container {
+    margin-top: 30px;
+}
+
+/* 
+*
+* States
+*
+*/
+
+.mustard-bg {
+    background-color: #E1AD01 !important;
+}
+
+.right {
+    text-align: right;
+}
