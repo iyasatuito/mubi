@@ -1,6 +1,36 @@
 <!-- include header file -->
 <?php include 'partials/header.php'; ?>
 
+<?php
+    // connect to database
+    require 'partials/connect.php';
+
+    // userID
+    $userID = 'U001';
+    // $schedID = 'S004';
+    $schedID = strval($_GET['id']);
+    // $_SESSION['movieID'] = $id;
+
+    // query prices
+    $prices = $mysqli->query("SELECT * FROM price");
+ 
+    // query schedule
+    $getschedule = $mysqli->query("SELECT movieTitle, cinemaName, scheduleDate, scheduleTime FROM schedule
+        INNER JOIN cinema ON schedule.cinemaID = cinema.cinemaID
+        INNER JOIN movie ON schedule.movieID = movie.movieID
+        WHERE scheduleID = '$schedID'
+    ");
+
+    $schedule = $getschedule->fetch_object();
+
+    
+    
+    
+
+    // close database connection
+    mysqli_close($mysqli);
+?>
+
 <div id="booking">
     <div class="container">
         <div class="row">
@@ -22,40 +52,15 @@
                                     Select Tickets
                                 </div>
                                 <table class="ticket-items">
-                                    <tr>                                  
-                                        <td>
-                                            Adult
-                                        </td>
-                                        <td>
-                                            $18.00
-                                        </td>
-                                        <td>
-                                            <input type="number">
-                                        </td>
-                                    </tr>
-                                    <tr>                                  
-                                        <td>
-                                            Adult
-                                        </td>
-                                        <td>
-                                            $18.00
-                                        </td>
-                                        <td>
-                                            <input type="number">
-                                        </td>
-                                    </tr>
-                                    <tr>                                  
-                                        <td>
-                                            Adult
-                                        </td>
-                                        <td>
-                                            $18.00
-                                        </td>
-                                        <td>
-                                            <input type="number">
-                                        </td>
-                                    </tr>
-                                    
+                                    <?php
+                                        while($price = $prices->fetch_object()) {
+                                            echo '<tr><td>';
+                                            echo $price->ticketType;
+                                            echo '</td><td>';
+                                            echo '$ '.sprintf('%0.2f', $price->price);;
+                                            echo '</td><td><input min="0" class="input-tix" id="input'.$price->ticketType.'" name="'.$price->ticketType.'" type="number"></td></tr>';
+                                        }
+                                    ?>
                                 </table>
                             </div>
                         </div>
@@ -73,135 +78,100 @@
                                     Select Seats
                                 </div>
                                 <table class="seats">
-                                    <tr>                                  
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>                                     
-                                    </tr>
-                                    <tr>                                  
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>                                     
-                                    </tr>
-                                    <tr>                                  
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>                                     
-                                    </tr>
-                                    <tr>                                  
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>                                     
-                                    </tr>
-                                    <tr>                                  
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>                                     
-                                    </tr>
-                                    <tr>                                  
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>                                     
-                                    </tr>
-                                    <tr>                                  
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>                                     
-                                    </tr>
-                                    <tr>                                  
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>
-                                        <td id="" class="seat"></td>                                     
-                                    </tr>                                 
+                                <?php
+                                    for ($x = 1; $x <= 8; $x++) {
+                                        echo '<tr>';
+                                        $z = '';
+
+                                        // assign letter per row
+                                        switch ($x) {
+                                            case 1:
+                                                $z = 'A';
+                                                break;
+                                            case 2:
+                                                $z = 'B';
+                                                break;
+                                             case 3:
+                                                $z = 'C';
+                                                break;
+                                            case 4:
+                                                $z = 'D';
+                                                break;
+                                            case 5:
+                                                $z = 'E';
+                                                break;
+                                            case 6:
+                                                $z = 'F';
+                                                break;
+                                            case 7:
+                                                $z = 'G';
+                                                break;      
+                                            default:
+                                                $z = 'H';
+                                        }
+
+                                        // assign id per seat
+                                        for ($y = 1; $y <= 14; $y++) {
+                                            echo '<td id="'.$z.$y.'" class="seat"></td>';
+                                        }
+                                        echo '</tr>';
+                                    }
+                                ?>                                
                                 </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step3">
+                        <div class="row">
+                            <div class="col col-sm-2 col-md-1">
+                                <div class="number">
+                                    3
+                                </div>
+                            </div>
+                            <div class="col col-sm-10 col-md-11">
+                                <div class="subheading">
+                                    Customer Info
+                                </div>
+                                <div>
+                                    <label for="name">
+                                        Name
+                                    </label>
+                                    <input type="text" name="name">
+                                </div>
+                                <div>
+                                    <label for="email">
+                                        Email
+                                    </label>
+                                    <input type="email" name="email">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step4">
+                        <div class="row">
+                            <div class="col col-sm-2 col-md-1">
+                                <div class="number">
+                                    4
+                                </div>
+                            </div>
+                            <div class="col col-sm-10 col-md-11">
+                                <div class="subheading">
+                                    Payment
+                                </div>
+                                <div>
+                                    <label for="name">
+                                        Card No.
+                                    </label>
+                                    <input type="number" name="card">
+                                </div>
+                                <div>
+                                    <label for="email">
+                                        CVV
+                                    </label>
+                                    <input type="number" name="cvv">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -228,42 +198,62 @@
                             Booking Summary
                         </div>
                         <div class="title">
-                            Sang-chi: The Legend of the Ten Rings
+                            <?php echo $schedule->movieTitle; ?>
                         </div>
                         <div class="text">
-                            Cinema 1
+                            <?php echo $schedule->cinemaName; ?>
                         </div>
                         <div class="text">
-                            21 Oct 2021, 9:10AM
+                            <?php echo $schedule->scheduleDate; ?>, <?php echo $schedule->scheduleTime; ?>
                         </div>
 
                         <hr>
 
                         <div class="row">
-                            <div class="col col-sm-6">
+                            <div class="col col-sm-4">
                                 <div class="text">
-                                    Adult x1
+                                    Adult                                    
                                 </div>
                             </div>
-                            <div class="col col-sm-6">
-                                <div class="text right">
-                                    $ 18.00
+                            <div class="col col-sm-4">
+                                <div class="text right" id="adultQty">0</div>
+                            </div>
+                            <div class="col col-sm-4">
+                                <div class="text right" id="adultTix">
+                                    $ 0.00
                                 </div>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col col-sm-6">
+                            <div class="col col-sm-4">
                                 <div class="text">
-                                    Child x1
+                                    Child
                                 </div>
                             </div>
-                            <div class="col col-sm-6">
-                                <div class="text right">
-                                    $ 12.00
+                            <div class="col col-sm-4">
+                                <div class="text right" id="childQty">0</div>
+                            </div>
+                            <div class="col col-sm-4">
+                                <div class="text right" id="childTix">
+                                    $ 0.00
                                 </div>
                             </div>
                         </div>
-
+                        <div class="row">
+                            <div class="col col-sm-4">
+                                <div class="text">
+                                    Senior
+                                </div>
+                            </div>
+                            <div class="col col-sm-4">
+                                <div class="text right" id="seniorQty">0</div>
+                            </div>
+                            <div class="col col-sm-4">
+                                <div class="text right" id="seniorTix">
+                                    $ 0.00
+                                </div>
+                            </div>
+                        </div>
                         <div class="row">
                             <div class="col col-sm-6">
                                 <div class="total">
@@ -272,25 +262,39 @@
                             </div>
                             <div class="col col-sm-6">
                                 <div class="total right">
-                                    $ 30.00
+                                    $ <span id="totalTix">0</span>.00
                                 </div>
                             </div>
                         </div>
 
                         <hr>
 
-                        <div class="text">
-                            Seats
+                        <div class="row">
+                            <div class="col col-sm-6">
+                                <div class="text">
+                                    Seats
+                                </div>
+                            </div>
+                            <div class="col col-sm-6">
+                                <div class="text right" id="selectedSeats">
+                                </div>
+                            </div>
                         </div>
-                        <button class="btn btn-mubi">
+
+                        <button class="btn btn-mubi" id="checkout">
                             Checkout
+                        </button>
+                        <button class="btn btn-mubi" id="pay">
+                            Pay
+                        </button>
+                        <button class="btn btn-mubi" id="back">
+                            Go Back
                         </button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
 <!-- include footer file -->
 <?php include 'partials/footer.php'; ?>

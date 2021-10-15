@@ -17,6 +17,8 @@ a {
 
 main {
     background-color: #202020;
+    min-height: 100vh;
+    /* padding-bottom: 75px; */
 }
 
 .btn-mubi {
@@ -74,8 +76,20 @@ main {
 *
 */
 
+#tickets footer,
+#booking footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
 footer {
     background-color: #E1AD01;
+    /* position: fixed; */
+    /* width: 100%; */
+    /* bottom: 0; */
+    /* z-index: 0; */
+    /* padding-top: 200px; */
 }
 
 .footer-copyright {
@@ -224,12 +238,14 @@ footer {
 
 #booking .container {
     width: 86%;
-    margin: 60px auto;
+    margin: 30px auto;
+    padding-bottom: 100px;
 }
 
 #booking .summary-container {
     background-color: #F2E9CA;
     margin-bottom: 30px;
+    margin-top: 10px;
 }
 
 #booking .countdown {
@@ -305,6 +321,10 @@ footer {
     text-align: center;
 }
 
+#booking .summary span {
+    color: #202020;
+}
+
 #booking .number {
     font-family: 'Playfair Display', serif;
     font-size: 3em;
@@ -325,6 +345,15 @@ footer {
     width: 30px;
     border: 3px solid #202020;
     background-color: #F2E9CA;
+    cursor: pointer;
+}
+
+#booking .seats .seat:hover {
+    background-color: #fff;
+}
+
+#pay, .step3, .step4, #back {
+    display: none;
 }
 
 /* 
@@ -352,7 +381,7 @@ footer {
     margin: 50px auto;
     /* margin-bottom: 100px; */
     width: 70%;
-    min-height: 70vh;
+    /* min-height: 70vh; */
 }
 
 #tickets .ticket {
@@ -396,6 +425,14 @@ footer {
     background-color: #F2E9CA !important;
 }
 
+.orange-bg {
+    background-color: #E15201 !important;
+}
+
 .right {
     text-align: right;
+}
+
+.show {
+    display: block;
 }
