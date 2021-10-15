@@ -129,7 +129,30 @@ $(document).ready(function () {
 // Pay
 $(document).ready(function () {
     $("#pay").on('click',function () {
-     
+        // create booking ID
+        // save to db
+        // ticket
+        var adult = parseInt($('#adultQty').text());
+        var child = parseInt($('#childQty').text());
+        var senior = parseInt($('#seniorQty').text());
+        var seatCount = adult + child + senior;
+
+        var data = {
+            qty: seatCount,
+            cost: parseInt($("#totalTix").text())
+        };
+
+        $.ajax({
+            type: "POST",
+            url: "process-checkout.php",
+            data: data,
+            dataType: "html",
+            encode: true,
+        }).done(function (data) {
+            $("#bookingContainer").hide();
+            $("#tickets").html(data);
+        });
+
     });
 });
 
@@ -164,8 +187,7 @@ $(document).ready(function () {
 $(document).ready(function () {
     $("select#date").on('change',function(id) {
         var data = {
-            date: $(this).val(),
-            id: 'M001'
+            date: $(this).val()
         };
         
         $.ajax({

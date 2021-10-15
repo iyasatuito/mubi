@@ -4,7 +4,9 @@
 <?php
     // setup session variables
     $_SESSION['movieID'] = "";
-
+    $_SESSION['schedID'] = "";
+    $_SESSION['userID'] = "U001";
+    
     // connect to database
     require 'partials/connect.php';
 
