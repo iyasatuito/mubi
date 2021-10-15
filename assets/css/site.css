@@ -12,6 +12,7 @@
 
 a {
     color: white;
+    text-decoration: none;
 }
 
 main {
@@ -157,6 +158,10 @@ footer {
 
 #movie .poster {
     width: 100%;
+}
+
+#movie .movie-details {
+    padding-left: 20px;
 }
 
 #movie .label {

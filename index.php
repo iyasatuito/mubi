@@ -1,6 +1,11 @@
 <!-- include header file -->
 <?php include 'partials/header.php'; ?>
 
+<?php
+    // setup session variables
+    $_SESSION['movieID'] = "";
+?>
+
 <div id="home">
     <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">

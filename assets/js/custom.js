@@ -38,3 +38,31 @@ $(document).ready(function () {
         });
     });
 });
+
+// Submit Edit Account Form via Ajax
+$(document).ready(function () {
+    $("select#date").on('change',function(id) {
+        // event.preventDefault();
+        // alert(this.value);
+        
+        console.log('hi');
+
+        var data = {
+            date: $(this).val(),
+            id: 'M001'
+        };
+
+        
+        $.ajax({
+            type: "POST",
+            url: "process-schedule.php",
+            data: data,
+            dataType: "html",
+            encode: true,
+        }).done(function (data) {
+            // $(".msg").show().text(data);
+            console.log('hello');
+            $("#scheduleContainer").html(data);
+        });
+    });
+});
