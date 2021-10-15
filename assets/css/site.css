@@ -123,6 +123,11 @@ footer {
     font-weight: 700;
 }
 
+#home #nowShowing,
+#home #comingSoon {
+    cursor: pointer;
+}
+
 /* 
 *
 * Movie
@@ -385,6 +390,10 @@ footer {
 
 .mustard-bg {
     background-color: #E1AD01 !important;
+}
+
+.corn-bg {
+    background-color: #F2E9CA !important;
 }
 
 .right {
