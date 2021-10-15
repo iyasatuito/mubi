@@ -44,7 +44,7 @@
 <main>
 	<nav class="navbar">
 		<div class="container">
-			<a class="nav-link active" aria-current="page" href="#"><img class="logo" src="assets/img/logo.png" alt="mubi"></a>
+			<a class="nav-link active" aria-current="page" href="index.php"><img class="logo" src="assets/img/logo.png" alt="mubi"></a>
 			<a class="nav-link" href="#">Login</a>
 		</div>
 	</nav>
