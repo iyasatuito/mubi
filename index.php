@@ -9,7 +9,7 @@
     require 'partials/connect.php';
 
     // query movie banners
-    $moviebanners = $mysqli->query("SELECT movieBanner FROM movie WHERE isFeatured=1");
+    $moviebanners = $mysqli->query("SELECT movieBanner, movieID FROM movie WHERE isFeatured=1");
 
     // query movies
     $movies = $mysqli->query("SELECT * FROM movie WHERE isFeatured=1");
@@ -40,11 +40,11 @@
                     if($banner==0){
                         echo 'hello';
                         echo '<div class="carousel-item active">';
-                        echo '<img src="assets/img/movies/'.$moviebanner->movieBanner.'" class="d-block w-100" alt="...">';
+                        echo '<a href="movie.php?id='.$moviebanner->movieID.'"><img src="assets/img/movies/'.$moviebanner->movieBanner.'" class="d-block w-100" alt="..."></a>';
                         echo '</div>';
                     } else {
                         echo '<div class="carousel-item">';
-                        echo '<img src="assets/img/movies/'.$moviebanner->movieBanner.'" class="d-block w-100" alt="...">';
+                        echo '<a href="movie.php?id='.$moviebanner->movieID.'"><img src="assets/img/movies/'.$moviebanner->movieBanner.'" class="d-block w-100" alt="..."></a>';
                         echo '</div>';
                     }
 
