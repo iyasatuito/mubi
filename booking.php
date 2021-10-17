@@ -23,9 +23,32 @@
 
     $schedule = $getschedule->fetch_object();
 
+    // query reserved seats
+    $seats = $mysqli->query("SELECT seat FROM ticket
+        INNER JOIN booking ON ticket.bookingID = booking.bookingID
+        INNER JOIN schedule ON schedule.scheduleID = booking.scheduleID
+        WHERE schedule.scheduleID = '$schedID'
+    ");
+
+    while($seat = $seats->fetch_object()) {
+        $reserved = $seat->seat;
+        $reservedSeats[] = $reserved;
+    }
+
+    // var_dump($reservedSeats);
+
+    // assign seatnames
+    for ($x = 0; $x <= 125; $x++){
+        $seatNames[] = 'A'.$x+1;
+    }
+
+    // var_dump($seatNames);
+
     
+
     
-    
+
+
 
     // close database connection
     mysqli_close($mysqli);
@@ -41,6 +64,7 @@
                             Book Tickets
                         </div>
 
+                        <!-- <div id="qrcode"></div> -->
                         <div class="step1">
                             <div class="row">
                                 <div class="col col-sm-2 col-md-1">
@@ -58,7 +82,7 @@
                                                 echo '<tr><td>';
                                                 echo $price->ticketType;
                                                 echo '</td><td>';
-                                                echo '$ '.sprintf('%0.2f', $price->price);;
+                                                echo '$ '.sprintf('%0.2f', $price->price);
                                                 echo '</td><td><input min="0" class="input-tix" id="input'.$price->ticketType.'" name="'.$price->ticketType.'" type="number"></td></tr>';
                                             }
                                         ?>
@@ -78,47 +102,95 @@
                                     <div class="subheading">
                                         Select Seats
                                     </div>
-                                    <table class="seats">
+                                    <div class="seats">
+                                        <div class="row">
+                                    <!-- </div> -->
+                                    <!-- <table class="seats"> -->
+                                        
                                     <?php
-                                        for ($x = 1; $x <= 8; $x++) {
-                                            echo '<tr>';
-                                            $z = '';
+
+                                    
+                                        foreach ($seatNames as $seatName) {
+                                            $checker = 0;
+
+                                            foreach ($reservedSeats as $reservedSeat) {
+                                                if($seatName==$reservedSeat){
+                                                    $checker = 1;
+                                                    break;        
+                                                } else {
+                                                    $checker = 0;
+                                                }
+                                            }
+                                            
+                                            if ($checker == 1) {
+                                                // echo 'reserved ';
+                                                echo '<div id="'.$seatName.'" class="col col-sm-1 seat mustard-bg"></div>';
+                                            } else {
+                                                // echo 'free ';
+                                                
+                                                echo '<div id="'.$seatName.'" class="col col-sm-1 seat"></div>';
+                                            }
+                                        }
+                                        // for ($x = 1; $x <= 8; $x++) {
+                                            // echo '<tr>';
+                                            // $z = '';
 
                                             // assign letter per row
-                                            switch ($x) {
-                                                case 1:
-                                                    $z = 'A';
-                                                    break;
-                                                case 2:
-                                                    $z = 'B';
-                                                    break;
-                                                case 3:
-                                                    $z = 'C';
-                                                    break;
-                                                case 4:
-                                                    $z = 'D';
-                                                    break;
-                                                case 5:
-                                                    $z = 'E';
-                                                    break;
-                                                case 6:
-                                                    $z = 'F';
-                                                    break;
-                                                case 7:
-                                                    $z = 'G';
-                                                    break;      
-                                                default:
-                                                    $z = 'H';
-                                            }
+                                            // switch ($x) {
+                                            //     case 1:
+                                            //         $z = 'A';
+                                            //         break;
+                                            //     case 2:
+                                            //         $z = 'B';
+                                            //         break;
+                                            //     case 3:
+                                            //         $z = 'C';
+                                            //         break;
+                                            //     case 4:
+                                            //         $z = 'D';
+                                            //         break;
+                                            //     case 5:
+                                            //         $z = 'E';
+                                            //         break;
+                                            //     case 6:
+                                            //         $z = 'F';
+                                            //         break;
+                                            //     case 7:
+                                            //         $z = 'G';
+                                            //         break;      
+                                            //     default:
+                                            //         $z = 'H';
+                                            // }
 
+                                            
                                             // assign id per seat
-                                            for ($y = 1; $y <= 14; $y++) {
-                                                echo '<td id="'.$z.$y.'" class="seat"></td>';
-                                            }
-                                            echo '</tr>';
-                                        }
+                                            // for ($y = 1; $y <= 14; $y++) {
+                                                // echo '<td id="'.$y.'" class="seat"></td>';
+                                                // $seatNames[$y-1] = $z.$y;
+                                                // echo $seatName . ' ';
+                                                // var_dump($seatName);
+
+                                                
+                                                // var_dump($seatNames);
+                                                
+
+                                            // }
+                                            // echo '</tr>';
+                                            
+                                        // }
+
+                                        
+
+                                        // var_dump($reservedSeats);
+                                        // var_dump($reservedSeats);
+                                        // var_dump($seatNames);
+                                        
+
+                                        
                                     ?>                                
-                                    </table>
+                                    <!-- </table> -->
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

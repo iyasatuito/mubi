@@ -1,5 +1,5 @@
 <!-- include header file -->
-<?php include 'partials/header.php'; ?>
+<!-- <php include 'partials/header.php'; ?>
 
 <div id="booking">
     <div class="container">
@@ -147,7 +147,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
 <!-- include footer file -->
-<?php include 'partials/footer.php'; ?>
+<!-- <php include 'partials/footer.php'; ?> -->

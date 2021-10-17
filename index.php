@@ -6,6 +6,7 @@
     $_SESSION['movieID'] = "";
     $_SESSION['schedID'] = "";
     $_SESSION['userID'] = "U001";
+    $_SESSION['seats'] = [];
     
     // connect to database
     require 'partials/connect.php';

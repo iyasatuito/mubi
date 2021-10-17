@@ -251,3 +251,5 @@ $(document).ready(function () {
         });
     });
 });
+
+// $('#qrcode').qrcode("this plugin is great");
