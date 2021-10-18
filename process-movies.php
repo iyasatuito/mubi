@@ -9,16 +9,19 @@
 
     // query movies
     if($type=='now'){
-        $movies = $mysqli->query("SELECT * FROM movie WHERE isFeatured=1");
+        $movies = $mysqli->query("SELECT * FROM movie WHERE isScreening=1");
     } else {
-        $movies = $mysqli->query("SELECT * FROM movie WHERE isFeatured=0");
+        $movies = $mysqli->query("SELECT * FROM movie WHERE isScreening=0");
     }
 
     while($movie = $movies->fetch_object()) {
             echo '<div class="movie-banner">';
             echo '<div class="overlay">';
+            echo '<div class="movieTitle">';
+            echo $movie->movieTitle;
+            echo '</div>';
             echo '<div>';
-            echo $movie->movieDescription;
+            echo substr($movie->movieDescription, 0, 150)."...";
             echo '</div>';
             echo '<a href="movie.php?id='.$movie->movieID.'" class="btn btn-mubi">Movie Info</a>';
             echo '</div>';
