@@ -9,9 +9,9 @@
 
     // query movies
     if($type=='now'){
-        $movies = $mysqli->query("SELECT * FROM movie WHERE isFeatured=1");
+        $movies = $mysqli->query("SELECT * FROM movie WHERE isScreening=1");
     } else {
-        $movies = $mysqli->query("SELECT * FROM movie WHERE isFeatured=0");
+        $movies = $mysqli->query("SELECT * FROM movie WHERE isScreening=0");
     }
 
     while($movie = $movies->fetch_object()) {

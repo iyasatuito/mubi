@@ -18,7 +18,7 @@
     $moviebanners = $mysqli->query("SELECT movieBanner, movieID FROM movie WHERE isFeatured=1");
 
     // query movies
-    $movies = $mysqli->query("SELECT * FROM movie WHERE isFeatured=1");
+    $movies = $mysqli->query("SELECT * FROM movie WHERE isScreening=1");
 
     // set banner counter
     $banner = 0;
