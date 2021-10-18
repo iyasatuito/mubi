@@ -30,6 +30,18 @@ main {
     padding-right: 30px;
 }
 
+.btn-mubi-secondary {
+    padding-left: 30px;
+    padding-right: 30px;
+    border: 1px solid #F2E9CA;
+    color: #F2E9CA;
+}
+
+.btn-mubi-secondary:hover {
+    border: 1px solid #E15201;
+    color: #E15201;
+}
+
 .btn-mubi:hover {
     background-color: #E15201;
 }
@@ -102,6 +114,14 @@ footer {
 *
 */
 
+#home .movieTitle {
+    font-family: 'Bebas Neue', sans-serif;
+    text-transform: uppercase;
+    font-size: 3em;
+    letter-spacing: 1px;
+    line-height: 1;
+}
+
 #home .container {
     width: 75%;
     padding: 50px 0;
@@ -120,7 +140,7 @@ footer {
 #home .movie-banner .overlay {
     width: 40%;
     position: absolute;
-    bottom: 70px;
+    top: 70px;
     left: 100px;
 }
 
@@ -344,17 +364,37 @@ footer {
     height: 30px;
     width: 30px;
     border: 3px solid #202020;
-    background-color: #F2E9CA;
+    background-color: #E15201;
     cursor: pointer;
 }
+
+#booking .seats .free {
+    background-color: #F2E9CA;
+}
+
+
+
 
 #booking .seats .seat:hover {
     background-color: #fff;
 }
 
-#pay, .step3, .step4, #back {
-    display: none;
+#booking .step3 .btn-container {
+    padding: 10px 0 20px 0;
 }
+
+#booking .step4 {
+    padding-top: 30px;
+}
+
+#booking .step4 input {
+    margin-bottom: 15px;
+    color: #202020;
+    width: 60%;
+}
+/* #pay, .step3, .step4, #back {
+    display: none;
+} */
 
 /* 
 *
@@ -388,6 +428,7 @@ footer {
     padding: 40px;
     background-color: #F2E9CA;
     text-align: center;
+    margin-bottom: 30px;
 }
 
 #tickets .ticket img {
@@ -409,6 +450,11 @@ footer {
 
 #tickets .ticket-container {
     margin-top: 30px;
+}
+
+#tickets .btn-mubi {
+    /* width: 100%; */
+    margin-top: 0;
 }
 
 /* 
@@ -435,4 +481,24 @@ footer {
 
 .show {
     display: block;
+}
+
+.hide {
+    display: none;
+}
+
+/*
+*
+* Print
+*
+*/
+
+@media print {
+    nav, .no-print, footer {
+        display: none !important;
+    }
+
+    .ticket {
+        border: 1px solid black;
+    }
 }

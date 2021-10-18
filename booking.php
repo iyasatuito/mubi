@@ -11,6 +11,8 @@
     $schedID = strval($_GET['id']);
     $_SESSION['schedID'] = $schedID;
 
+    // var_export($_SESSION['seats']);
+
     // query prices
     $prices = $mysqli->query("SELECT * FROM price");
  
@@ -124,11 +126,11 @@
                                             
                                             if ($checker == 1) {
                                                 // echo 'reserved ';
-                                                echo '<div id="'.$seatName.'" class="col col-sm-1 seat mustard-bg"></div>';
+                                                echo '<div id="'.$seatName.'" class="col col-sm-1 seat"></div>';
                                             } else {
                                                 // echo 'free ';
                                                 
-                                                echo '<div id="'.$seatName.'" class="col col-sm-1 seat"></div>';
+                                                echo '<div id="'.$seatName.'" class="col col-sm-1 seat free"></div>';
                                             }
                                         }
                                         // for ($x = 1; $x <= 8; $x++) {
@@ -195,7 +197,7 @@
                             </div>
                         </div>
 
-                        <div class="step3">
+                        <!-- <div class="step3">
                             <div class="row">
                                 <div class="col col-sm-2 col-md-1">
                                     <div class="number">
@@ -220,9 +222,9 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
 
-                        <div class="step4">
+                        <!-- <div class="step4">
                             <div class="row">
                                 <div class="col col-sm-2 col-md-1">
                                     <div class="number">
@@ -247,12 +249,12 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <div class="col col-lg-4">
                     <div class="summary-container">
-                        <div class="countdown">
+                        <!-- <div class="countdown">
                             <div class="row">
                                 <div class="col col-sm-6">
                                     <span>                                
@@ -265,7 +267,7 @@
                                     </span>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="summary">
                             <div class="label">
                                 Booking Summary
@@ -344,34 +346,32 @@
 
                             <div class="row">
                                 <div class="col col-sm-6">
-                                    <div class="text">
+                                    <div class="text" id="selectedSeatsLabel">
                                         Seats
                                     </div>
                                 </div>
                                 <div class="col col-sm-6">
-                                    <div class="text right" id="selectedSeats">
+                                    <div class="text right" id="selectedSeats">-
                                     </div>
                                 </div>
                             </div>
 
-                            <button class="btn btn-mubi" id="checkout">
+                            <a href="checkout.php?id=<?php echo $schedID; ?>" class="btn btn-mubi" id="checkout">
                                 Checkout
-                            </button>
-                            <button class="btn btn-mubi" id="pay">
+                            </a>
+                            <!-- <button class="btn btn-mubi" id="pay">
                                 Pay
                             </button>
                             <button class="btn btn-mubi" id="back">
                                 Go Back
-                            </button>
+                            </button> -->
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div id="tickets">
-        
-    </div>
+    
     
 
 <!-- include footer file -->

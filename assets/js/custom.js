@@ -51,30 +51,96 @@ $(document).ready(function () {
 // Select Seat
 $(document).ready(function () {  
     var seats = [];
-    var actuatSeats = [];
-    var actualSeat = "";
+    var checker = 0;
+    var adult = 0;
+    var child = 0;
+    var senior = 0;
+    // var seatCount = 0;
 
-    $(".seat").on('click',function () {
-        // event.preventDefault();
-        // alert($(this).attr('id'));
+    console.log(seats);
+    $(".free").on('click',function () {
+        var seat = $(this).attr('id');
 
         adult = parseInt($('#adultQty').text());
         child = parseInt($('#childQty').text());
         senior = parseInt($('#seniorQty').text());
+        // seatCount = adult + child + senior;
+        // var seatCount = adult + child + senior;
 
-        var seat = $(this).attr('id');
-        var seatCount = adult + child + senior;
+        // console.log(seats.length);
+        // console.log(seats);     
 
-        seats.push(seat);
+        if(seats.length==0){
+            // console.log('empty array');
+            seats.push(seat);
+        }else{
+            // console.log('not empty');
+            for (let x = 0; x < seats.length; x++) {
+                if(seat==seats[x]){
+                    checker = 1;
+                }
+            }
+
+            if(checker!=1){
+                seats.push(seat);
+            }
+
+            checker = 0;
+        }
+
+        // console.log(seats);
+        // console.log(seat);
+                
+
         
-        // for(var i = 0; i < seatCount; i++) {
-        //     actuatSeats.push('io');
-        // }
-
-        $('#selectedSeats').html(seats);
 
         // color selected seats
-        $('#'+seat).addClass('orange-bg');
+        $(this).removeClass('free');
+        // $(this).toggleClass('reserved');
+
+        var data = {
+            seats: seats,
+            aQty: adult,
+            sQty: senior,
+            cQty: child
+        };
+
+        // //console.log('hi');
+        
+        $.ajax({
+            type: "POST",
+            url: "process-seats.php",
+            data: data,
+            dataType: "json",
+            encode: true,
+        }).done(function (data) {
+            // $(".msg").show().text(data);
+            //console.log('hell');
+            var selectedSeats = data.join(' ')
+            $('#selectedSeats').html(selectedSeats);
+        });
+    });
+});
+
+// Select Seat
+$(document).ready(function () {  
+    // var seats = [];
+
+    $(".reserved").on('click',function () {
+        // var seat = $(this).attr('id');
+        // // var seatCount = adult + child + senior;
+
+        // seats.push(seat);
+        
+        // // for(var i = 0; i < seatCount; i++) {
+        // //     actuatSeats.push('io');
+        // // }
+
+        // $('#selectedSeats').html(seats);
+
+        // color selected seats
+        // $(this).removeClass('reserved');
+        // $(this).addClass('free');
 
         // var data = {
         //     seat: $(this).attr('id')
@@ -95,43 +161,53 @@ $(document).ready(function () {
     });
 });
 
+
 // Checkout
 $(document).ready(function () {
     $("#checkout").on('click',function () {
-        $("#checkout").hide();
-        $("#back").show();
+        // $("#selectedSeatsLabel").show();
+        // $("#selectedSeats").show();
         
-        $("#pay").show();
+        // $("#selectedSeats").show();
+
+        // let adult = parseInt($('#adultQty').text());
+        // let child = parseInt($('#childQty').text());
+        // let senior = parseInt($('#seniorQty').text());
+        // let seatCount = adult + child + senior;
+
+        // if(seatCount)
+
+
+        // $("#checkout").hide();
+        // $("#back").show();
+        // $("#pay").show();
         
-        $(".step1").hide();
-        $(".step2").hide();
-        $(".step3").show();
-        $(".step4").show();
+        // $(".step1").hide();
+        // $(".step2").hide();
+        // $(".step3").show();
+        // $(".step4").show();
         
 
     });
 });
 
 // Back
-$(document).ready(function () {
-    $("#back").on('click',function () {
-        $("#checkout").show();
-        $("#back").hide();        
-        $("#pay").hide();
+// $(document).ready(function () {
+//     $("#back").on('click',function () {
+//         $("#checkout").show();
+//         $("#back").hide();        
+//         $("#pay").hide();
         
-        $(".step1").show();
-        $(".step2").show();
-        $(".step3").hide();
-        $(".step4").hide();
-    });
-});
+//         $(".step1").show();
+//         $(".step2").show();
+//         $(".step3").hide();
+//         $(".step4").hide();
+//     });
+// });
 
 // Pay
 $(document).ready(function () {
     $("#pay").on('click',function () {
-        // create booking ID
-        // save to db
-        // ticket
         var adult = parseInt($('#adultQty').text());
         var child = parseInt($('#childQty').text());
         var senior = parseInt($('#seniorQty').text());
@@ -152,7 +228,6 @@ $(document).ready(function () {
             $("#bookingContainer").hide();
             $("#tickets").html(data);
         });
-
     });
 });
 
@@ -252,4 +327,6 @@ $(document).ready(function () {
     });
 });
 
-// $('#qrcode').qrcode("this plugin is great");
+
+// print page
+
