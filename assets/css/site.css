@@ -12,10 +12,13 @@
 
 a {
     color: white;
+    text-decoration: none;
 }
 
 main {
     background-color: #202020;
+    min-height: 100vh;
+    /* padding-bottom: 75px; */
 }
 
 .btn-mubi {
@@ -25,6 +28,18 @@ main {
     font-weight: 700;
     padding-left: 30px;
     padding-right: 30px;
+}
+
+.btn-mubi-secondary {
+    padding-left: 30px;
+    padding-right: 30px;
+    border: 1px solid #F2E9CA;
+    color: #F2E9CA;
+}
+
+.btn-mubi-secondary:hover {
+    border: 1px solid #E15201;
+    color: #E15201;
 }
 
 .btn-mubi:hover {
@@ -73,8 +88,20 @@ main {
 *
 */
 
+#tickets footer,
+#booking footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
 footer {
     background-color: #E1AD01;
+    /* position: fixed; */
+    /* width: 100%; */
+    /* bottom: 0; */
+    /* z-index: 0; */
+    /* padding-top: 200px; */
 }
 
 .footer-copyright {
@@ -86,6 +113,14 @@ footer {
 * Home
 *
 */
+
+#home .movieTitle {
+    font-family: 'Bebas Neue', sans-serif;
+    text-transform: uppercase;
+    font-size: 3em;
+    letter-spacing: 1px;
+    line-height: 1;
+}
 
 #home .container {
     width: 75%;
@@ -105,7 +140,7 @@ footer {
 #home .movie-banner .overlay {
     width: 40%;
     position: absolute;
-    bottom: 70px;
+    top: 70px;
     left: 100px;
 }
 
@@ -120,6 +155,11 @@ footer {
     padding: 20px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
+}
+
+#home #nowShowing,
+#home #comingSoon {
+    cursor: pointer;
 }
 
 /* 
@@ -157,6 +197,10 @@ footer {
 
 #movie .poster {
     width: 100%;
+}
+
+#movie .movie-details {
+    padding-left: 20px;
 }
 
 #movie .label {
@@ -214,12 +258,14 @@ footer {
 
 #booking .container {
     width: 86%;
-    margin: 60px auto;
+    margin: 30px auto;
+    padding-bottom: 100px;
 }
 
 #booking .summary-container {
     background-color: #F2E9CA;
     margin-bottom: 30px;
+    margin-top: 10px;
 }
 
 #booking .countdown {
@@ -295,6 +341,10 @@ footer {
     text-align: center;
 }
 
+#booking .summary span {
+    color: #202020;
+}
+
 #booking .number {
     font-family: 'Playfair Display', serif;
     font-size: 3em;
@@ -314,8 +364,37 @@ footer {
     height: 30px;
     width: 30px;
     border: 3px solid #202020;
+    background-color: #E15201;
+    cursor: pointer;
+}
+
+#booking .seats .free {
     background-color: #F2E9CA;
 }
+
+
+
+
+#booking .seats .seat:hover {
+    background-color: #fff;
+}
+
+#booking .step3 .btn-container {
+    padding: 10px 0 20px 0;
+}
+
+#booking .step4 {
+    padding-top: 30px;
+}
+
+#booking .step4 input {
+    margin-bottom: 15px;
+    color: #202020;
+    width: 60%;
+}
+/* #pay, .step3, .step4, #back {
+    display: none;
+} */
 
 /* 
 *
@@ -324,7 +403,7 @@ footer {
 */
 
 #tickets .container {
-    
+    width: 75%;
 }
 
 #tickets .page-title {
@@ -342,13 +421,14 @@ footer {
     margin: 50px auto;
     /* margin-bottom: 100px; */
     width: 70%;
-    min-height: 70vh;
+    /* min-height: 70vh; */
 }
 
 #tickets .ticket {
     padding: 40px;
     background-color: #F2E9CA;
     text-align: center;
+    margin-bottom: 30px;
 }
 
 #tickets .ticket img {
@@ -372,6 +452,11 @@ footer {
     margin-top: 30px;
 }
 
+#tickets .btn-mubi {
+    /* width: 100%; */
+    margin-top: 0;
+}
+
 /* 
 *
 * States
@@ -382,6 +467,38 @@ footer {
     background-color: #E1AD01 !important;
 }
 
+.corn-bg {
+    background-color: #F2E9CA !important;
+}
+
+.orange-bg {
+    background-color: #E15201 !important;
+}
+
 .right {
     text-align: right;
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+/*
+*
+* Print
+*
+*/
+
+@media print {
+    nav, .no-print, footer {
+        display: none !important;
+    }
+
+    .ticket {
+        border: 1px solid black;
+    }
 }

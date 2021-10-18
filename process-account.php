@@ -1,7 +1,5 @@
 <?php
 
-    session_start();
-
     // connect to database
     require 'partials/connect.php';
 
