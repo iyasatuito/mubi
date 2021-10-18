@@ -75,4 +75,4 @@ $result = $getMovie->fetch_object();
 </div>
 
 <!-- include footer file -->
-<?php include 'partials/footer.php'; ?>
+<?php include 'partials/admin-footer.php'; ?>

@@ -7,22 +7,16 @@
 
     $email = $_POST['email'];
     $password = $_POST['password'];
-    // $id = "U001";
 
     // prepare sql statement
     $sql = "SELECT userID, userEmail, userPassword FROM user WHERE user.userEmail = '$email' AND user.userPassword = '$password';";
-
+    $results = $mysqli->query($sql)->fetch_object();
     // set message depending on result
-    if(!empty($mysqli->query($sql))){
-        // if($sql ->num_rows == 1){            
-            // Define variables and initialize with empty values
-    
-            $results = $mysqli->query($sql)->fetch_object();
+    if(!empty($results)){
     
             $_SESSION["loggedin"] = true;
             $_SESSION['userID'] = $results->userID;
-            // header("location: welcome.php"); todo verify
-            echo json_encode('You have successfully updated your account details.');
+            header("location: index.php");
         }else{
             echo json_encode('Cannot login. Please try again.');
         }

@@ -4,7 +4,7 @@
  
     require 'partials/connect.php';
 
-    $schedID = "S007"; //must be generated
+    $schedID = $_POST['schedID']; //must be generated
     $movTitle = $_POST['movieTitle'];
     $cinemaName = $_POST['cinemaName'];
     $scheduleDate = $_POST['scheduleDate'];

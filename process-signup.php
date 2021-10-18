@@ -10,21 +10,26 @@
     $email = $_POST['email'];
     $password = $_POST['password'];
     $confPassword = $_POST['confPassword'];
-    $userID = "U004";
-    $userRole = 0; //use 1 for admin
+    $userID = $_POST['userID'];
+    $userRole = 0; //default
 
     //add checker if password and confrim password matched
+    if($password === $confPassword ){
     $sql = "INSERT INTO user VALUES ('$userID','$fName','$lName','$email','$password','$userRole');";
+    $results = $mysqli->query($sql);
 
-    // set message depending on result
-    if(!empty($mysqli->query($sql))){
-    // if($sql ->num_rows == 1){            
-
-        $_SESSION["loggedin"] = true;
-        $_SESSION['userID'] = $results -> userID;
-        // header("location: welcome.php"); todo verify
-        echo json_encode('You have successfully created an account.');
-    }else{
-        echo json_encode('Cannot login. Please try again.');
+     // set message depending on result
+     if(!empty($results)){
+          
+            $_SESSION["loggedin"] = true;
+            $_SESSION['userID'] = $userID;
+            header("location: index.php");
+        }else{
+            echo json_encode('Cannot login. Please try again.');
+        }
+    } else {
+        echo json_encode('Passwords do not match');
+        // header("location: signup.php");
     }
+
 ?>

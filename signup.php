@@ -3,17 +3,22 @@
 <script>
 
 function signup() {
+
+    var userId = "U" + Math.floor(100 + Math.random() * 900)
+
+    addHidden(document.getElementById("registrationForm"), "userID", userId);
+
     document.getElementById("registrationForm").submit();
-    // var emailForm = form.email.value;
-    // var pwForm = form.password.value;
-    // var xmlhttp = new XMLHttpRequest();
-    // xmlhttp.open("post", "Login", true);
-    // xmlhttp.onreadystatechange = function () {
-    //     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-    //         loginResults();
-    //     }
-    // }
 }
+
+function addHidden(form, key, value) {
+        var input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = key;
+        input.value = value;
+        form.appendChild(input);
+    } 
+
 </script>
 
 <div id="signup">

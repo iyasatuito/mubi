@@ -1,5 +1,5 @@
 <!-- include header file -->
-<?php include 'partials/header.php'; ?>
+<?php include 'partials/admin-header.php'; ?>
 <script>
     function editAdminAccount() {
 
@@ -17,6 +17,16 @@
         form.appendChild(input);
     }
 </script>
+
+<?php 
+
+require 'partials/connect.php';
+
+$userID = $_GET['userID'];
+$getUser = $mysqli->query("SELECT * FROM user WHERE user.userID = '$userID'");
+$thisUser = $getUser->fetch_object();
+
+?>
 
 <div id="edit">
     <div class="container">
@@ -37,17 +47,18 @@
 
                 <div id="edit-admin-group" class="form-group">
                     <label for="email">Email</label>
-                    <input type="text" class="form-control" id="email" name="email" value="<?php echo $thisUser->userLast; ?>" required />
+                    <input type="text" class="form-control" id="email" name="email" value="<?php echo $thisUser->userEmail; ?>" required />
                 </div>
 
                 <div id="edit-admin-group" class="form-group">
                     <label for="password">Change Password</label>
-                    <input type="text" class="form-control" id="password" name="password" value="<?php echo $thisUser->userLast; ?>" required />
+                    <input type="text" class="form-control" id="password" name="password" value="<?php echo $thisUser->userPassword; ?>" required />
                 </div>
 
                 <div id="edit-admin-group" class="form-group">
-                    <form class="userRole" action="" method="">
-                        <select name="userRoleList" id="userRoleList">
+                    <label for="userRoleList">Change Role</label>
+                    <form action="" method="">
+                        <select class="form-control" name="userRoleList" id="userRoleList">
                             <option value="0">Customer</option>
                             <option value="1">Admin</option>
                         </select>
@@ -64,4 +75,4 @@
 </div>
 
 <!-- include footer file -->
-<?php include 'partials/footer.php'; ?>
+<?php include 'partials/admin-footer.php'; ?>

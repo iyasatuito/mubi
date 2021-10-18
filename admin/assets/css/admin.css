@@ -5,5 +5,39 @@
 }
 
 html {
-    background: red;
+
+    height: 100%;
+}
+
+.side-menu-background {
+    height: 100%;
+}
+
+.btn-mubi {
+    background-color: #E1AD01;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding-left: 30px;
+    padding-right: 30px;
+    
+}
+
+.btn-mubi:hover {
+    background-color: #E15201;
+}
+
+.dashboard-details {
+    padding: 50px;
+    background: #F2E9CA;
+    border-radius: 10px;
+    color: black;
+    text-align: center;
+    width: 80%;
+}
+
+.btn-dark {
+    background: #F09491;
+    color: white;
+    border: 3px solid white;
 }
