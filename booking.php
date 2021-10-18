@@ -40,7 +40,7 @@
     // var_dump($reservedSeats);
 
     // assign seatnames
-    for ($x = 0; $x <= 125; $x++){
+    for ($x = 0; $x <= 132; $x++){
         $seatNames[] = 'A'.$x+1;
     }
 
@@ -105,7 +105,9 @@
                                         Select Seats
                                     </div>
                                     <div class="seats">
-                                        <div class="row">
+                                        <div class="container">
+                                            
+                                            <div class="row">
                                     <!-- </div> -->
                                     <!-- <table class="seats"> -->
                                         
@@ -191,6 +193,7 @@
                                         
                                     ?>                                
                                     <!-- </table> -->
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

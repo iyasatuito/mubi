@@ -372,8 +372,12 @@ footer {
     background-color: #F2E9CA;
 }
 
-
-
+#booking .seats .container {
+    width: 600px;
+    margin-left: 0;
+    padding-left: 10px;
+    /* background-color: red; */
+}
 
 #booking .seats .seat:hover {
     background-color: #fff;
