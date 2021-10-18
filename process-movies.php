@@ -17,8 +17,11 @@
     while($movie = $movies->fetch_object()) {
             echo '<div class="movie-banner">';
             echo '<div class="overlay">';
+            echo '<div class="movieTitle">';
+            echo $movie->movieTitle;
+            echo '</div>';
             echo '<div>';
-            echo $movie->movieDescription;
+            echo substr($movie->movieDescription, 0, 150)."...";
             echo '</div>';
             echo '<a href="movie.php?id='.$movie->movieID.'" class="btn btn-mubi">Movie Info</a>';
             echo '</div>';

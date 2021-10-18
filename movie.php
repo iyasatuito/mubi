@@ -71,7 +71,7 @@
                         <?php echo $movie->movieDescription ?>    
                     </div>
                     <div class="details">
-                        Director/s: <?php echo $movie->movieDirector ?>
+                        Director: <?php echo $movie->movieDirector ?>
                     </div>
                     <div class="details">
                         Starring: <?php echo $movie->movieActor ?>

@@ -6,6 +6,10 @@
     $_SESSION['movieID'] = "";
     $_SESSION['schedID'] = "";
     $_SESSION['userID'] = "U001";
+    $_SESSION['seats'] = [];
+    $_SESSION['child'] = "";
+    $_SESSION['adult'] = "";
+    $_SESSION['senior'] = "";   
     
     // connect to database
     require 'partials/connect.php';
@@ -18,19 +22,6 @@
 
     // set banner counter
     $banner = 0;
-
-    // while($movie = $movies->fetch_object()) {
-    //     echo $movie->movieID;
-    //     echo '<br>';
-    //     echo $movie->movieTitle;
-    //     echo '<br>';
-    //     echo $movie->movieDescription;
-    //     echo '<br>';
-    //     echo $movie->movieBanner;
-    //     echo '<br>';
-    //     echo $movie->isFeatured;
-    //     echo '<br>';
-    // }
 
 ?>
 
@@ -83,8 +74,11 @@
                     while($movie = $movies->fetch_object()) {
                         echo '<div class="movie-banner">';
                         echo '<div class="overlay">';
+                        echo '<div class="movieTitle">';
+                        echo $movie->movieTitle;
+                        echo '</div>';
                         echo '<div>';
-                        echo $movie->movieDescription;
+                        echo substr($movie->movieDescription, 0, 150)."...";
                         echo '</div>';
                         echo '<a href="movie.php?id='.$movie->movieID.'" class="btn btn-mubi">Movie Info</a>';
                         echo '</div>';
