@@ -16,8 +16,14 @@
     $sql = "DELETE FROM user WHERE user.userID = '$userID';";
 	
     if(!empty($mysqli->query($sql))){       
-        header('Location: ' . 'users.php');
+        $_SESSION['feedback'] = "You have successfully deleted a user.";
     } else {
-        echo json_encode('Cannot update. Please try again.');
+        $_SESSION['feedback'] = "Failed to delete user.";
     }
+
+
+    $host  = $_SERVER['HTTP_HOST'];
+    $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+    $extra = 'users.php';
+    header("Location: http://$host$uri/$extra");
 ?>

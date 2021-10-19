@@ -17,8 +17,13 @@
     // set message depending on result
     if(!empty($mysqli->query($sql))){
         // echo json_encode('You have successfully updated your account.');
-        header('Location: ' . 'users.php');
+        $_SESSION['feedback'] = "You have successfully updated an account.";
     }else{
-        echo json_encode('Cannot login. Please try again.');
+        $_SESSION['feedback'] = "Failed to update account.";
     }
+
+    $host  = $_SERVER['HTTP_HOST'];
+    $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+    $extra = 'users.php';
+    header("Location: http://$host$uri/$extra");
 ?>

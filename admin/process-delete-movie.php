@@ -18,8 +18,13 @@
     $delete = mysqli_multi_query($mysqli, $sql2);
 	
     if(!empty($delete)){         
-        header('Location: ' . 'movies.php');
+        $_SESSION['feedback'] = "You have successfully deleted a movie.";
     } else {
-        echo json_encode('Cannot update. Please try again.');
+        $_SESSION['feedback'] = "Unable to delete the movie. There are bookings associated to it.";
     }
+
+    $host  = $_SERVER['HTTP_HOST'];
+    $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+    $extra = 'movies.php';
+    header("Location: http://$host$uri/$extra");
 ?>

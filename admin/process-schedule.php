@@ -19,8 +19,14 @@
 
     // set message depending on result
     if(!empty($mysqli->query($sql2))){
-        header('Location: ' . 'schedule.php');
+        $_SESSION['feedback'] = "You have successfully added a schedule.";
     } else {
-        echo json_encode('Cannot login. Please try again.');
+        $_SESSION['feedback'] = "Sorry, something went wring.";
     }
+
+     // redirect to review page
+     $host  = $_SERVER['HTTP_HOST'];
+     $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+     $extra = 'schedule.php';
+     header("Location: http://$host$uri/$extra");
 ?>

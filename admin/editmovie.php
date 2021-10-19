@@ -5,7 +5,7 @@
     function editMovie() {
 
         var isFeatureValue = 0;
-        if(document.getElementById("isFeature").checked){
+        if (document.getElementById("isFeature").checked) {
             isFeatureValue = 1;
         }
 
@@ -26,7 +26,7 @@
     }
 </script>
 
-<?php 
+<?php
 
 require 'partials/connect.php';
 
@@ -73,7 +73,7 @@ $result = $getMovie->fetch_object();
                         <input type="text" class="form-control" id="trailer" name="trailer" value="<?php echo $result->movieTrailer; ?>" required />
                     </div>
                     <div id="edit-movie-group" class="form-group">
-                        <input type="checkbox" id="isFeature" name="isFeature" value="<?php echo $result->isFeature; ?>"  />
+                        <input type="checkbox" id="isFeature" name="isFeature" value="<?php echo $result->isFeature; ?>" />
                         <label class="custom-control-label" for="isFeature">Feature on Homepage</label>
                     </div>
                     <div id="edit-movie-group" class="form-group">
@@ -93,6 +93,12 @@ $result = $getMovie->fetch_object();
                     </button></span>
                 <br>
             </div>
+            <?php
+            if ($_SESSION['feedback'] != "") {
+                echo '<div class="feedback">' . $_SESSION['feedback'] . '</div>';
+            }
+            $_SESSION['feedback'] = "";
+            ?>
         </div>
     </div>
 </div>
