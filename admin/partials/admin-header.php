@@ -9,8 +9,8 @@
 	<title>Mubi</title>
 
 	<!-- Favicon -->
-	<link rel="shortcut icon" href="../assets/img/icons/favicon.ico" type="image/x-icon">
-	<link rel="icon" href="../assets/img/icons/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="assets/favicon.ico" type="image/x-icon">
 
 	<!-- Google Font -->
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

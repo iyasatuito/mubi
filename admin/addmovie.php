@@ -11,8 +11,14 @@
             isFeatureValue = 1;
         }
 
+        var isScreeningValue = 0;
+        if(document.getElementById("isScreening").checked){
+            isScreeningValue = 1;
+        }
+
         addHidden(document.getElementById("addMovie"), "movieID", movId);
         addHidden(document.getElementById("addMovie"), "isFeatured", isFeatureValue);
+        addHidden(document.getElementById("addMovie"), "isScreening", isScreeningValue);
 
         document.getElementById("addMovie").submit();
     }
@@ -78,6 +84,10 @@
                     <div id="add-movie-group" class="custom-control custom-checkbox">
                         <input type="checkbox" class="custom-control-input" id="isFeature" name="isFeature" value="<?php echo $thisUser->userLast; ?>" required />
                         <label class="custom-control-label" for="isFeature">Feature on Homepage</label>
+                    </div>
+                    <div id="add-movie-group" class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="isScreening" name="isScreening" value="<?php echo $thisUser->userLast; ?>" required />
+                        <label class="custom-control-label" for="isScreening">Now Showing</label>
                     </div>
                 </form>
 

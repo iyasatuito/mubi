@@ -6,11 +6,18 @@
     function deleteMovie(){
         if (confirm('Are you sure you want to delete this user?')) {
              console.log('User deleted');
-
+             httpGet()
         } else {
              // Do nothing!
             console.log('User not');
         }
+    }
+
+    function httpGet() {
+        let xmlHttpReq = new XMLHttpRequest();
+        xmlHttpReq.open("GET", "process-delete-movie.php?movieTitle=<?php echo $result->movieTitle ?>", true); 
+        xmlHttpReq.send(null);
+        return xmlHttpReq.responseText;
     }
  
 
@@ -20,12 +27,8 @@
 <?php
  require 'partials/connect.php';
 
-// query movies for admin
-$getmovies = $mysqli->query("SELECT movieTitle, scheduleDate FROM schedule LEFT JOIN movie ON schedule.movieID = movie.movieID");
 
-// $results = $getmovies->fetch_object();
-// echo $results;
-
+$getmovies = $mysqli->query("SELECT DISTINCT movieTitle, movieDirector, movieActor, isScreening FROM movie");
 
     // close database connection
 mysqli_close($mysqli);
@@ -35,7 +38,7 @@ mysqli_close($mysqli);
     <div class="container">
         <div class="row">
             <div class="col-4">
-                    <div class="text-md-left">DASHBOARD</div>
+                    <div class="text-md-left"><a href="home.php">DASHBOARD</a></div>
                     <div class=""><a href="movies.php">MOVIES</a></div>
                     <div class=""><a href="addmovie.php">ADD MOVIE</a></div>
                     <div class=""><a href="schedule.php">SCHEDULE</a></div>
@@ -48,9 +51,10 @@ mysqli_close($mysqli);
                     <thead>
                         <!--Headers !-->
                         <tr class="table-head">
-                            <th style="width:25%">Movie</th>
-                            <th style="width:25%">Start</th>
-                            <th>End</th>
+                            <th>Movie</th>
+                            <th>Director</th>
+                            <th>Actor</th>
+                            <th>Status</th>
                             <th>Ticket</th>
                         </tr>
                     </thead>
@@ -64,14 +68,17 @@ mysqli_close($mysqli);
                                     <p><?php echo $result->movieTitle; ?></p>
                                 </td>
                                 <td >
-                                    <p><?php echo $result->scheduleDate; ?></p>
+                                    <p><?php echo $result->movieDirector; ?></p>
                                 </td>
-                                <td>
-                                    <p><?php echo $result->scheduleDate; ?></p>
+                                <td >
+                                    <p><?php echo $result->movieActor; ?></p>
+                                </td>
+                                <td >
+                                    <p><?php echo $result->isScreening; ?></p>
                                 </td>
                                 <td> <!-- edit movie -->
-                                <a href='editmovie.php?movieTitle=<?php echo $result->movieTitle ?>'><img class="edit-book-space" src="assets/user/edit.png" width="26" height="24"></a>
-                                <a href='process-delete-movie.php?movieTitle=<?php echo $result->movieTitle ?>'><img class="edit-book-space" src="assets/user/delete.png" width="24" height="24"></a>
+                                     <a href='editmovie.php?movieTitle=<?php echo $result->movieTitle ?>'><img class="edit-book-space" src="assets/user/edit.png" width="26" height="24"></a>
+                                     <a href='process-delete-movie.php?movieTitle=<?php echo $result->movieTitle ?>'><img class="edit-book-space" src="assets/user/delete.png" width="24" height="24"></a>
                                 </td>
                             </tr>
                         <?php

@@ -5,9 +5,7 @@
 function signup() {
 
     var userId = "U" + Math.floor(100 + Math.random() * 900)
-
     addHidden(document.getElementById("registrationForm"), "userID", userId);
-
     document.getElementById("registrationForm").submit();
 }
 

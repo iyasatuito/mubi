@@ -15,9 +15,10 @@
     $movID = $_POST['movieID'];
     $trailer =  $_POST['trailer']; //must be utube id
     $isFeature = $_POST['isFeatured']; 
+    $isScreening = $_POST['isScreening']; 
 
 
-    $sql = "INSERT INTO movie VALUES ('$movID','$movTitle','$movDescription','$movDirector','$movActor','$movDuration', '$movBanner', '$movPoster', '$trailer', '$isFeature');";
+    $sql = "INSERT INTO movie VALUES ('$movID','$movTitle','$movDescription','$movDirector','$movActor','$movDuration', '$movBanner', '$movPoster', '$trailer', '$isFeature', '$isScreening');";
 
     if(!empty($mysqli->query($sql))){
     // if($sql ->num_rows == 1){            
