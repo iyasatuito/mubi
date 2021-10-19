@@ -19,12 +19,8 @@
 require 'partials/connect.php';
 
 // query users for admin
-$getusers = $mysqli->query("SELECT * FROM user");
+$getusers = $mysqli->query("SELECT * FROM user WHERE user.userRole <> '2'");
 
-// $results = $getusers->fetch_object();
-
-
-// close database connection
 mysqli_close($mysqli);
 ?>
 
@@ -32,7 +28,7 @@ mysqli_close($mysqli);
     <div class="container">
         <div class="row">
             <div class="col-2">
-                <div class="text-md-left">DASHBOARD</div>
+                <div class="text-md-left"><a href="home.php">DASHBOARD</a></div>
                 <div class=""><a href="movies.php">MOVIES</a></div>
                 <div class=""><a href="addmovie.php">ADD MOVIE</a></div>
                 <div class=""><a href="schedule.php">SCHEDULE</a></div>
@@ -68,7 +64,7 @@ mysqli_close($mysqli);
                                 </td>
                                 <td>
                                     <a href='edit-admin-account.php?userID=<?php echo $result->userID ?>'><img class="edit-book-space" src="assets/user/edit.png" width="26" height="24"></a>
-                                    <a href='process-delete-user.php?userID=<?php echo $result->userID ?>' onclick="deleteUser()"><img class="edit-book-space" src="assets/user/delete.png" width="24" height="24"></a> 
+                                    <a href='process-delete-user.php?userID=<?php echo $result->userID ?>'><img class="edit-book-space" src="assets/user/delete.png" width="24" height="24"></a> 
                                 </td>
                             </tr>
                         <?php

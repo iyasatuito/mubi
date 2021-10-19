@@ -15,13 +15,17 @@ $today = date("Y-m-d H:i:s");
 
 $getSchedules = $mysqli->query("SELECT * FROM schedule");
 
+$getMovies = $mysqli->query("SELECT * FROM movie");
+
 $getBookings = $mysqli->query("SELECT * FROM booking");
 
-while($schedule = $getSchedules -> fetch_object()){
-    if(($schedule->scheduleDate) > $today){
-         $upcomingMovies += 1;
-    } else {
+while($movie = $getMovies -> fetch_object()){
+    if(($movie->isScreening) === '1'){
          $nowShowing += 1;
+    } elseif(($movie->isScreening) === '2'){
+        $pastMovies += 1;
+    } else {
+         $upcomingMovies += 1;
     }
 }
 
