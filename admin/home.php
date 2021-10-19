@@ -43,34 +43,31 @@ mysqli_close($mysqli);
     <div id="home">
         <div class="container">
             <div class="row">
-                <div class="col-4">
+                <div class="col col-lg-4">
                     <div class="dashboard-details">
                         <h1><?php echo $pastMovies; ?></h1>
                         <p class="text-medium">PAST MOVIES</p>
                     </div>
                 </div>
-                <div class="col-4">
+                <div class="col col-lg-4">
                     <div class="dashboard-details">
                         <h1><?php echo $nowShowing; ?></h1>
                         <p class="text-medium">NOW SHOWING</p>
                     </div>
                 </div>
-                <div class="col-4">
+                <div class="col col-lg-4">
                     <div class="dashboard-details">
                         <h1><?php echo $upcomingMovies; ?></h1>
                         <p class="text-medium">UPCOMING</p>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div style="padding:20px"></div>
-                <div class="col-8">
+                <div class="col col-lg-8">
                     <div class="dashboard-details">
                         <h1>$<?php echo $totalSales;?></h1>
                         <p class="text-medium">TOTAL SALES</p>
                     </div>
                 </div>
-                <div class="col-4">
+                <div class="col col-lg-4">
                     <div class="dashboard-details">
                         <h1><?php echo $ticketBooked; ?></h1>
                         <p class="text-medium">TICKETS BOOKED</p>

@@ -54,8 +54,8 @@ mysqli_close($mysqli);
                                 } ?></p>
                         </td>
                         <td>
-                            <a href='edit-admin-account.php?userID=<?php echo $result->userID ?>'><img class="edit-book-space" src="assets/user/edit.png" width="26" height="24"></a>
-                            <a href='process-delete-user.php?userID=<?php echo $result->userID ?>'><img class="edit-book-space" src="assets/user/delete.png" width="24" height="24"></a>
+                            <a href='edit-admin-account.php?userID=<?php echo $result->userID ?>'><?php require 'partials/pen.php'; ?></a>
+                            <a href='process-delete-user.php?userID=<?php echo $result->userID ?>'><?php require 'partials/trash.php'; ?></a>
                         </td>
                     </tr>
                 <?php

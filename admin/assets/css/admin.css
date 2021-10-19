@@ -75,7 +75,7 @@ main {
 }
 
 .content {
-    padding-left: 350px;
+    padding-left: 300px;
     /* background-color: red; */
     width: 100%;
     margin: 100px auto;
@@ -85,19 +85,68 @@ main {
     padding: 20px;
     background-color: #f44336;
     color: white;
-  }
-  
-  .closebtn {
-    margin-left: 15px;
-    color: white;
-    font-weight: bold;
-    float: right;
-    font-size: 22px;
-    line-height: 20px;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-  
-  .closebtn:hover {
-    color: black;
-  }
+}
+
+.closebtn {
+margin-left: 15px;
+color: white;
+font-weight: bold;
+float: right;
+font-size: 22px;
+line-height: 20px;
+cursor: pointer;
+transition: 0.3s;
+}
+
+.closebtn:hover {
+color: black;
+}
+
+.admin-icon {
+    height: 20px;
+}
+
+#movies .table-overall {
+width: 90%;
+margin: 0 auto;
+}
+
+#movies .table-overall tr {
+border-bottom: 1px solid #202020;
+}
+
+#movies .table-overall p {
+margin-bottom: 0;
+margin: 10px 0;
+}
+
+#addMovie, #addSchedule {
+    width: 80%;
+    margin: 0 auto;
+}
+
+button {
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.custom-control {
+    margin-bottom: 20px;
+}
+
+#movies .feedback {
+    padding-left: 5%;
+    padding-bottom: 30px;
+}
+
+#home .container {
+    width: 90%;
+}
+
+#home .dashboard-details {
+    margin-bottom: 30px;
+    width: 100%;
+}

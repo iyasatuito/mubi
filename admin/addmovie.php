@@ -1,6 +1,5 @@
 <!-- include header file -->
 <?php
-
     include 'partials/admin-header.php';
 ?>
 
@@ -61,22 +60,21 @@
                 <label class="custom-control-label" for="isFeature">Feature on Homepage</label>
             </div>
             <div class="form-group">
-                <label for="isScreening">Change Role</label>
+                <label for="isScreening">Screening Status</label>
                 <form action="" method="">
                     <select class="form-control" name="isScreening" id="isScreening">
                         <option value="0">Upcoming</option>
                         <option value="1">Now Showing</option>
                         <option value="2">Past Movie</option>
                     </select>
+                    <div>
+                        <button class="btn btn-mubi" onclick="addmovie()">
+                            Submit
+                        </button>
+                    </div>
                 </form>
             </div>
-        </form>
-
-        <div>
-            <button class="btn btn-mubi" onclick="addmovie()">
-                Submit
-            </button>
-        </div>
+        </form>        
     </div>
 </div>
 
