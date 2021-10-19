@@ -23,6 +23,7 @@ mysqli_close($mysqli);
 
 <div class="col col-lg-9 content">
     <div id="movies">
+    <h1>Users</h1>
     <?php
     if($_SESSION['feedback']!=""){
         echo '<tr><div class="feedback">'.$_SESSION['feedback'].'</div></tr>';

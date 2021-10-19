@@ -31,6 +31,7 @@ $thisUser = $getUser->fetch_object();
 <div class="col col-lg-9 content">
     <div id="edit">
         <div class="container">
+        <h1>Edit Account</h1>
             <div class="row">
                 <form id="editAdminAccount" method="post" action="process-edit-admin-account.php">
                     <div id="edit-admin-group" class="form-group">
