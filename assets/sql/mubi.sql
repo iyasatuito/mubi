@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 18, 2021 at 06:34 PM
+-- Generation Time: Oct 19, 2021 at 12:48 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.2
 
@@ -81,6 +81,17 @@ INSERT INTO `booking` (`bookingID`, `scheduleID`, `userID`, `ticketQty`, `totalC
 ('616d8743f39b1', 'S001', 'U001', 0, 0),
 ('616d8788d781c', 'S001', 'U001', 3, 48),
 ('616d87e2cc36e', 'S001', 'U001', 1, 18),
+('616da7788d493', 'S002', 'U001', 3, 48),
+('616e3e7e4944d', 'S001', 'U001', 3, 48),
+('616e3f1958857', 'S001', 'U001', 0, 0),
+('616e3f78bd07d', 'S001', 'U001', 0, 0),
+('616e3fe40051f', 'S001', 'U001', 0, 0),
+('616e4005138b5', 'S001', 'U001', 0, 0),
+('616e40081dd18', 'S001', 'U001', 0, 0),
+('616e4025759ad', 'S001', 'U001', 0, 0),
+('616e402f1b16f', 'S001', 'U001', 0, 0),
+('616e403bd1b35', 'S001', 'U001', 0, 0),
+('616ea22394502', 'S001', 'U001', 3, 48),
 ('B001', 'S001', 'U001', 2, 30),
 ('B002', 'S002', 'U002', 1, 18),
 ('B003', 'S001', 'U003', 1, 14),
@@ -120,6 +131,7 @@ CREATE TABLE `movie` (
   `movieDirector` varchar(200) NOT NULL,
   `movieActor` varchar(200) NOT NULL,
   `movieDuration` int(11) NOT NULL,
+  `movieHero` varchar(100) NOT NULL,
   `movieBanner` varchar(200) NOT NULL,
   `moviePoster` varchar(200) NOT NULL,
   `movieTrailer` varchar(200) NOT NULL,
@@ -131,13 +143,13 @@ CREATE TABLE `movie` (
 -- Dumping data for table `movie`
 --
 
-INSERT INTO `movie` (`movieID`, `movieTitle`, `movieDescription`, `movieDirector`, `movieActor`, `movieDuration`, `movieBanner`, `moviePoster`, `movieTrailer`, `isFeatured`, `isScreening`) VALUES
-('M001', 'Shang-Chi and The Legend of the Ten Rings', 'Marvel Studios’ Shang-Chi and The Legend of The Ten Rings stars Simu Liu as Shang-Chi, who must confront the past he thought he left behind when he is drawn into the web of the mysterious Ten Rings organization. The film also stars Tony Leung as Wenwu, Awkwafina as Shang-Chi’s friend Katy and Michelle Yeoh as Jiang Nan, as well as Fala Chen, Meng’er Zhang, Florian Munteanu and Ronny Chieng. Shang-Chi and The Legend of The Ten Rings is directed by Destin Daniel Cretton and produced by Kevin Feige and Jonathan Schwartz, with Louis D’Esposito, Victoria Alonso and Charles Newirth serving as executive producers. David Callaham & Destin Daniel Cretton & Andrew Lanham wrote the screenplay for the film.', 'Destin Daniel Cretton', 'Simu Liu, Michelle Yeoh, Awkwafina', 120, 'shang-chi.jpg', 'shang-chi-poster.jpg', '8YjFbMbfXaQ', 1, 1),
-('M002', 'Free Guy', 'In Free Guy, a bank teller who discovers he is actually a background player in an open-world video game, decides to become the hero of his own story...one he rewrites himself. Now in a world where there are no limits, he is determined to be the guy who saves his world his way...before it is too late. Starring Ryan Reynolds, Jodie Comer, Lil Rel Howery, Joe Keery, Utkarsh Ambudkar and Taika Waititi, Free Guy is directed by Shawn Levy from a screenplay by Matt Lieberman and Zak Penn and a story by Lieberman. The film is produced by Ryan Reynolds, p.g.a., Shawn Levy, p.g.a., Sarah Schechter, Greg Berlanti and Adam Kolbrenner with Mary McLaglen, Josh McLaglen, George Dewey, Dan Levine and Michael Riley McGrath serving as executive producers. Some of the video gaming world’s most influential figures drop in for cameos in “Free Guy,” including: Imane “Pokimane” Anys, Lannan “LazarBeam” Eacott, Seán William “Jacksepticeye” McLoughlin, Tyler “Ninja” Blevins and Daniel “DanTDM” Middleton.', 'Shawn Levy', 'Ryan Reynolds, Taika Waititi, LilRel Howery', 120, 'free-guy.jpg', 'free-guy-poster.jpg', 'X2m-08cOAbc', 1, 1),
-('M003', 'Paw Patrol: The Movie', 'The PAW Patrol is on a roll! When their biggest rival, Humdinger, becomes Mayor of nearby Adventure City and starts wreaking havoc, Ryder and everyone’s favorite heroic pups kick into high gear to face the challenge head on. While one pup must face his past in Adventure City, the team finds help from a new ally, the savvy dachshund Liberty. Together, armed with exciting new gadgets and gear, the PAW Patrol fights to save the citizens of Adventure City! Joining the PAW Patrol in their thrilling first big screen adventure are members from the original series’ cast along with Iain Armitage, Marsai Martin, Yara Shahidi, Kim Kardashian West, Randall Park, Dax Shepard, with Tyler Perry and Jimmy Kimmel and introducing Will Brisbin.', 'Cal Brunker', 'Tyler Perry, Randall Park, Jimmy Kimmel', 120, 'paw-patrol.jpg', 'paw-patrol-poster.jpg', 'LRMTr2VZcr8', 0, 0),
-('M004', 'Honsla Rakd', 'This film is directed by Amarjit Singh Saroon and produced by Daljit Thind & Diljit Dosanjh. What happens when a loveable, rooted, desi, punjabi young man, who’s a single father with a seven year old boy attempts to find love again, find a mom for his son, crosses paths with his ex who comes back into the city after a seven year gap? Honsla Rakh, starring Diljit Dosanjh, Sonam Bajwa, Shehnaaz Gill & Shinda Grewal is a romantic comedy set in Vancouver, Canada that has warmth at its center and deals with the emotional bonds between father and child, and love between men and women in modern times. ', 'Amarjit Singh Saron', 'Diljit Dosanjh, Sonam Bajwa, Shehnaaz Gill', 120, 'honsla-rakh.jpg', 'honsla-rakh-poster.jpg', 'KjOfqltPRqs', 0, 1),
-('M005', 'The Dark Knight Rises', 'Despite his tarnished reputation after the events of The Dark Knight (2008), in which he took the rap for Dent\'s crimes, Batman feels compelled to intervene to assist the city and its Police force, which is struggling to cope with Bane\'s plans to destroy the city.', 'Christopher Nolan', 'Joseph Gordon-Levitt, Michael Caine, Tom Hardy', 120, 'dark-night.jpg', 'dark-knight-poster.jpg', 'GAjBzu8ggi0', 1, 0),
-('M006', 'The Eternals', 'The Eternals, a race of immortal beings with superhuman powers who have secretly lived on Earth for thousands of years, reunite to battle the evil Deviants.', 'Chloé Zhao', 'Gemma Chan, Richard Madden, Kumail Nanjiani', 120, 'eternals.jpg', 'eternals-poster.jpg', 'x_me3xsvDgk', 0, 0);
+INSERT INTO `movie` (`movieID`, `movieTitle`, `movieDescription`, `movieDirector`, `movieActor`, `movieDuration`, `movieHero`, `movieBanner`, `moviePoster`, `movieTrailer`, `isFeatured`, `isScreening`) VALUES
+('M001', 'Shang-Chi and The Legend of the Ten Rings', 'Marvel Studios’ Shang-Chi and The Legend of The Ten Rings stars Simu Liu as Shang-Chi, who must confront the past he thought he left behind when he is drawn into the web of the mysterious Ten Rings organization. The film also stars Tony Leung as Wenwu, Awkwafina as Shang-Chi’s friend Katy and Michelle Yeoh as Jiang Nan, as well as Fala Chen, Meng’er Zhang, Florian Munteanu and Ronny Chieng. Shang-Chi and The Legend of The Ten Rings is directed by Destin Daniel Cretton and produced by Kevin Feige and Jonathan Schwartz, with Louis D’Esposito, Victoria Alonso and Charles Newirth serving as executive producers. David Callaham & Destin Daniel Cretton & Andrew Lanham wrote the screenplay for the film.', 'Destin Daniel Cretton', 'Simu Liu, Michelle Yeoh, Awkwafina', 120, 'shang-chi-hero.jpg', 'shang-chi.jpg', 'shang-chi-poster.jpg', '8YjFbMbfXaQ', 0, 1),
+('M002', 'Free Guy', 'In Free Guy, a bank teller who discovers he is actually a background player in an open-world video game, decides to become the hero of his own story...one he rewrites himself. Now in a world where there are no limits, he is determined to be the guy who saves his world his way...before it is too late. Starring Ryan Reynolds, Jodie Comer, Lil Rel Howery, Joe Keery, Utkarsh Ambudkar and Taika Waititi, Free Guy is directed by Shawn Levy from a screenplay by Matt Lieberman and Zak Penn and a story by Lieberman. The film is produced by Ryan Reynolds, p.g.a., Shawn Levy, p.g.a., Sarah Schechter, Greg Berlanti and Adam Kolbrenner with Mary McLaglen, Josh McLaglen, George Dewey, Dan Levine and Michael Riley McGrath serving as executive producers. Some of the video gaming world’s most influential figures drop in for cameos in “Free Guy,” including: Imane “Pokimane” Anys, Lannan “LazarBeam” Eacott, Seán William “Jacksepticeye” McLoughlin, Tyler “Ninja” Blevins and Daniel “DanTDM” Middleton.', 'Shawn Levy', 'Ryan Reynolds, Taika Waititi, LilRel Howery', 120, 'free-guy-hero.jpg', 'free-guy.jpg', 'free-guy-poster.jpg', 'X2m-08cOAbc', 1, 1),
+('M003', 'Paw Patrol: The Movie', 'The PAW Patrol is on a roll! When their biggest rival, Humdinger, becomes Mayor of nearby Adventure City and starts wreaking havoc, Ryder and everyone’s favorite heroic pups kick into high gear to face the challenge head on. While one pup must face his past in Adventure City, the team finds help from a new ally, the savvy dachshund Liberty. Together, armed with exciting new gadgets and gear, the PAW Patrol fights to save the citizens of Adventure City! Joining the PAW Patrol in their thrilling first big screen adventure are members from the original series’ cast along with Iain Armitage, Marsai Martin, Yara Shahidi, Kim Kardashian West, Randall Park, Dax Shepard, with Tyler Perry and Jimmy Kimmel and introducing Will Brisbin.', 'Cal Brunker', 'Tyler Perry, Randall Park, Jimmy Kimmel', 120, 'paw-patrol-hero.jpg', 'paw-patrol.jpg', 'paw-patrol-poster.jpg', 'LRMTr2VZcr8', 0, 0),
+('M004', 'Honsla Rakd', 'This film is directed by Amarjit Singh Saroon and produced by Daljit Thind & Diljit Dosanjh. What happens when a loveable, rooted, desi, punjabi young man, who’s a single father with a seven year old boy attempts to find love again, find a mom for his son, crosses paths with his ex who comes back into the city after a seven year gap? Honsla Rakh, starring Diljit Dosanjh, Sonam Bajwa, Shehnaaz Gill & Shinda Grewal is a romantic comedy set in Vancouver, Canada that has warmth at its center and deals with the emotional bonds between father and child, and love between men and women in modern times. ', 'Amarjit Singh Saron', 'Diljit Dosanjh, Sonam Bajwa, Shehnaaz Gill', 120, 'honsla-rakh-hero.jpg', 'honsla-rakh.jpg', 'honsla-rakh-poster.jpg', 'KjOfqltPRqs', 0, 1),
+('M005', 'The Dark Knight Rises', 'Despite his tarnished reputation after the events of The Dark Knight (2008), in which he took the rap for Dent\'s crimes, Batman feels compelled to intervene to assist the city and its Police force, which is struggling to cope with Bane\'s plans to destroy the city.', 'Christopher Nolan', 'Joseph Gordon-Levitt, Michael Caine, Tom Hardy', 120, 'dark-knight-hero.jpg', 'dark-night.jpg', 'dark-knight-poster.jpg', 'GAjBzu8ggi0', 1, 0),
+('M006', 'The Eternals', 'The Eternals, a race of immortal beings with superhuman powers who have secretly lived on Earth for thousands of years, reunite to battle the evil Deviants.', 'Chloé Zhao', 'Gemma Chan, Richard Madden, Kumail Nanjiani', 120, 'the-eternals-hero.jpg', 'eternals.jpg', 'eternals-poster.jpg', 'x_me3xsvDgk', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -181,9 +193,13 @@ CREATE TABLE `schedule` (
 INSERT INTO `schedule` (`scheduleID`, `movieID`, `cinemaID`, `scheduleDate`, `scheduleTime`) VALUES
 ('S001', 'M001', 'C001', '2021-12-31', '09:00:00'),
 ('S002', 'M001', 'C002', '2021-12-30', '09:00:00'),
-('S003', 'M001', 'C003', '2021-12-31', '09:00:00'),
 ('S004', 'M001', 'C001', '2021-12-31', '11:00:00'),
-('S005', 'M001', 'C002', '2021-12-28', '11:00:00');
+('S005', 'M001', 'C002', '2021-12-28', '11:00:00'),
+('S180', 'M002', 'C001', '2021-10-23', '15:00:00'),
+('S188', 'M002', 'C001', '2021-10-24', '09:40:00'),
+('S487', 'M003', 'C002', '2021-10-23', '10:00:00'),
+('S567', 'M002', 'C001', '2021-10-23', '09:00:00'),
+('S701', 'M002', 'C001', '2021-10-23', '11:00:00');
 
 -- --------------------------------------------------------
 
@@ -228,7 +244,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`userID`, `userFirst`, `userLast`, `userEmail`, `userPassword`, `userRole`) VALUES
-('U001', '', '', '', '', 1),
+('U000', 'Guest', 'Guest', 'guest@mubi.com', '000000', 2),
+('U001', 'Betina', 'Bondoc', 'betinabondoc@gmail.com', '123456', 1),
 ('U002', 'Pia', 'Satuitio', 'iyasatuito@gmail.com', '123456', 1),
 ('U003', 'Ma', 'Pia', 'iya@gmail.com', '123456', 0);
 
