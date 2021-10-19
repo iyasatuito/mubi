@@ -90,10 +90,6 @@ $cinemaResults = $mysqli->query("SELECT cinemaID, cinemaName FROM cinema");
             </button>
         </form>
 
-        <button class="btn btn-mubi" onclick="addSchedule()">
-            Submit
-        </button>
-
     </div>
 </div>
 
