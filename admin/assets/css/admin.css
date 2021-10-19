@@ -137,12 +137,14 @@ button {
     margin-bottom: 20px;
 }
 
-.feedback {
+.feedback, h1 {
     padding-left: 5%;
     padding-bottom: 30px;
 }
 
-#schedule .feedback {
+#schedule .feedback,
+#edit h1,
+#schedule h1 {
     padding-left: 10%;
 }
 
@@ -150,7 +152,21 @@ button {
     width: 90%;
 }
 
+#home h1 {
+    padding-left: 0;
+}
+
 #home .dashboard-details {
     margin-bottom: 30px;
     width: 100%;
+}
+
+#home h2 {
+    font-size: 3em;
+}
+
+#editAdminAccount,
+#editMovie {
+    width: 80%;
+    margin: 0 auto;
 }

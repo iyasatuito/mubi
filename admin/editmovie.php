@@ -86,12 +86,13 @@ $result = $getMovie->fetch_object();
                                     <option value="2" <?php if($result->isScreening == '2'){echo("selected");}?>>Past Movie</option>
                                 </select>
                             </form>
-                        </div>
+                        <span><button class="btn btn-mubi" onclick="editMovie()">
+                            Submit
+                        </button></span>
+                    </div>
                 </form>
 
-                <span><button class="btn btn-mubi" onclick="editMovie()">
-                        Submit
-                    </button></span>
+                
                 <br>
             </div>
         </div>
