@@ -1,18 +1,15 @@
 <?php include 'partials/admin-header.php'; ?>
 
 <script>
-
-    function deleteUser(){
+    function deleteUser() {
         if (confirm('Are you sure you want to delete this user?')) {
-             console.log('User deleted');
+            console.log('User deleted');
 
         } else {
-             // Do nothing!
+            // Do nothing!
             console.log('User not');
         }
     }
- 
-
 </script>
 
 <?php
@@ -43,7 +40,7 @@ mysqli_close($mysqli);
                         <tr class="table-head">
                             <th style="width:25%">Name</th>
                             <th style="width:25%">Email</th>
-                            <th>Email</th>
+                            <th>Role</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -60,11 +57,15 @@ mysqli_close($mysqli);
                                     <p><?php echo $result->userEmail; ?></p>
                                 </td>
                                 <td>
-                                    <p><?php echo $result->userRole; ?></p>
+                                    <p><?php if ($result->userRole == '0') {
+                                            echo ("Customer");
+                                        } else {
+                                            echo ("Admin");
+                                        } ?></p>
                                 </td>
                                 <td>
                                     <a href='edit-admin-account.php?userID=<?php echo $result->userID ?>'><img class="edit-book-space" src="assets/user/edit.png" width="26" height="24"></a>
-                                    <a href='process-delete-user.php?userID=<?php echo $result->userID ?>'><img class="edit-book-space" src="assets/user/delete.png" width="24" height="24"></a> 
+                                    <a href='process-delete-user.php?userID=<?php echo $result->userID ?>'><img class="edit-book-space" src="assets/user/delete.png" width="24" height="24"></a>
                                 </td>
                             </tr>
                         <?php
