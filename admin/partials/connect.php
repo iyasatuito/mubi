@@ -2,15 +2,16 @@
 
     // SQL credentials
     $mysql_host = "localhost";
-    $mysql_database = "mubi";
 
-    // Local
+    // Local    
+    $mysql_database = "mubi";
     $mysql_username = "root";
     $mysql_password = "";
 
     // Remote
+    // $mysql_database = "db_bbondoc";
     // $mysql_username = "bbondoc";
-    // $mysql_password = "C#wTv!!!";
+    // $mysql_password = "mapiaxmeth!";
 
     // open a new connection to the SQL server
     $mysqli = new mysqli($mysql_host, $mysql_username, $mysql_password, $mysql_database);
