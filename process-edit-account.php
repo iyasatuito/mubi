@@ -13,18 +13,23 @@
     $userID = $_SESSION['userID'];
     $userRole = 0; //use 1 for admin
 
-    //add checker if password and confrim password matched
-    $sql = "UPDATE user SET userFirst = '$fName', userLast = '$lName', userEmail = '$email' WHERE user.userID = '$userID';";
+    if($confPassword==$password){
+        //add checker if password and confrim password matched
+        $sql = "UPDATE user SET userFirst = '$fName', userLast = '$lName', userEmail = '$email' WHERE user.userID = '$userID';";
 
-    // set message depending on result
-    if(!empty($mysqli->query($sql))){
-    // if($sql ->num_rows == 1){            
+        // set message depending on result
+        if(!empty($mysqli->query($sql))){
+            $_SESSION['feedback'] = "You have successfully updated your account.";
+        }else{
+            $_SESSION['feedback'] = "Cannot login. Please try again.";
+        }
+    } else {
+        $_SESSION['feedback'] = "Passwords do not match.";
+    }   
 
-        $_SESSION["loggedin"] = true;
-        $_SESSION['userID'] = $results -> userID;
-        // header("location: welcome.php"); todo verify
-        echo json_encode('You have successfully updated your account.');
-    }else{
-        echo json_encode('Cannot login. Please try again.');
-    }
+    // redirect to review page
+    $host  = $_SERVER['HTTP_HOST'];
+    $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+    $extra = 'edit-account.php';
+    header("Location: http://$host$uri/$extra");
 ?>

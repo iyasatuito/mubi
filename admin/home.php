@@ -4,6 +4,8 @@
 <?php
 require 'partials/connect.php';
 
+$_SESSION['movieHero']="";
+
 $nowShowing = 0;
 $upcomingMovies = 0;
 $pastMovies = 0;

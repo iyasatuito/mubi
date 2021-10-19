@@ -53,7 +53,7 @@
 					if($_SESSION['userID']==""){
 						echo '<a class="nav-link" href="login.php">Login</a>';
 					}else{
-						echo '<a class="nav-link" href="account.php">Account</a>';
+						echo '<a class="nav-link" href="edit-account.php">Account</a>';
 						if($_SESSION['userRole']==1){
 							echo '<a class="nav-link" href="admin/home.php">Admin</a>';
 						}

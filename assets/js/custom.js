@@ -232,31 +232,31 @@ $(document).ready(function () {
 });
 
 // Submit Edit Account Form via Ajax
-$(document).ready(function () {
-    $("form#editAccount").on('submit',function (event) {
-        event.preventDefault();
+// $(document).ready(function () {
+//     $("form#editAccount").on('submit',function (event) {
+//         event.preventDefault();
 
-        var data = {
-            fname: $("#fname").val(),
-            lname: $("#lname").val(),
-            email: $("#email").val(),
-            password: $("#password").val()
-        };
+//         var data = {
+//             fname: $("#fname").val(),
+//             lname: $("#lname").val(),
+//             email: $("#email").val(),
+//             password: $("#password").val()
+//         };
 
-        //console.log('hi');
+//         //console.log('hi');
         
-        $.ajax({
-            type: "POST",
-            url: "process-account.php",
-            data: data,
-            dataType: "json",
-            encode: true,
-        }).done(function (data) {
-            $(".msg").show().text(data);
-            //console.log('hell');
-        });
-    });
-});
+//         $.ajax({
+//             type: "POST",
+//             url: "process-account.php",
+//             data: data,
+//             dataType: "json",
+//             encode: true,
+//         }).done(function (data) {
+//             $(".msg").show().text(data);
+//             //console.log('hell');
+//         });
+//     });
+// });
 
 // Display schedule based on selected date via Ajax
 $(document).ready(function () {
