@@ -7,7 +7,6 @@
 
     // userID
     $userID = $_SESSION['userID'];
-    // $schedID = 'S004';
     $schedID = strval($_GET['id']);
     $_SESSION['schedID'] = $schedID;
 
@@ -15,11 +14,6 @@
     $childTix = $_SESSION['child'];
     $seniorTix = $_SESSION['senior'];
     $seats = $_SESSION['seats'];
-
-    // var_export($seats);
-    // echo $adultTix;
-    // echo $childTix;
-    // echo $seniorTix;
 
     // query user
     $getuser = $mysqli->query("SELECT userFirst, userLast, userEmail FROM user
@@ -42,23 +36,6 @@
 
     $schedule = $getschedule->fetch_object();
 
-    // query reserved seats
-    // $seats = $mysqli->query("SELECT seat FROM ticket
-    //     INNER JOIN booking ON ticket.bookingID = booking.bookingID
-    //     INNER JOIN schedule ON schedule.scheduleID = booking.scheduleID
-    //     WHERE schedule.scheduleID = '$schedID'
-    // ");
-
-    // while($seat = $seats->fetch_object()) {
-    //     $reserved = $seat->seat;
-    //     $reservedSeats[] = $reserved;
-    // }
-
-    // assign seatnames
-    // for ($x = 0; $x <= 125; $x++){
-    //     $seatNames[] = 'A'.$x+1;
-    // }
-
     // close database connection
     mysqli_close($mysqli);
 ?>
@@ -75,9 +52,6 @@
 
                         <div class="step3">
                             <div class="row">
-                                <!-- <div class="col col-sm-2 col-md-1"> -->
-                                <!-- </div> -->
-                                <!-- <div class="col col-sm-10 col-md-11"> -->
                                 <div class="col">
                                     <div class="number">
                                         3
@@ -102,11 +76,6 @@
 
                         <div class="step4">
                             <div class="row">
-                                <!-- <div class="col col-sm-2 col-md-1">
-                                    <div class="number">
-                                        4
-                                    </div>
-                                </div> -->
                                 <div class="col">
                                     <div class="number">
                                         4
@@ -139,20 +108,6 @@
                 </div>
                 <div class="col col-lg-4">
                     <div class="summary-container">
-                        <!-- <div class="countdown">
-                            <div class="row">
-                                <div class="col col-sm-6">
-                                    <span>                                
-                                        TIME LEFT
-                                    </span>
-                                </div>
-                                <div class="col col-sm-6 right">
-                                    <span>
-                                        04:32
-                                    </span>
-                                </div>
-                            </div>
-                        </div> -->
                         <div class="summary">
                             <div class="label">
                                 Booking Summary

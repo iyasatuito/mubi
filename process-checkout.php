@@ -9,19 +9,28 @@
     $schedID = $_SESSION['schedID'];
     $userID = $_SESSION['userID'];
     $seats = $_SESSION['seats'];
+    $code = 'qr.jpg';
+    $seat = 'A27';
 
-    // $email = $_POST['email'];
-    // $password = $_POST['password'];
     $bookingID = uniqid();
+    // $ticketID = uniqid();
 
     // prepare sql insert query
     $statement = $mysqli->prepare("INSERT INTO booking (bookingID, scheduleID, userID, ticketQty, totalCost) VALUES(?, ?, ?, ?, ?)");
 
     //bind parameters for markers, bind values and execute insert query
-    $statement->bind_param('sssid', $bookingID, $schedID, $userID, $qty, $cost); 
+    $statement->bind_param('sssid', $bookingID, $schedID, $userID, $qty, $cost);
+
+    // foreach($seats as $seat){    
+    //     // prepare sql insert query
+    //     $tixStatement = $mysqli->prepare("INSERT INTO ticket (ticketID, bookingID, seat, code) VALUES(?, ?, ?, ?)");
+
+    //     //bind parameters for markers, bind values and execute insert query
+    //     $tixStatement->bind_param('ssss', $ticketID, $bookingID, $seat, $code);
+    // }
 
     // query schedule
-        $getschedule = $mysqli->query("SELECT movieTitle, cinemaName, scheduleDate, scheduleTime FROM schedule
+    $getschedule = $mysqli->query("SELECT movieTitle, cinemaName, scheduleDate, scheduleTime FROM schedule
         INNER JOIN cinema ON schedule.cinemaID = cinema.cinemaID
         INNER JOIN movie ON schedule.movieID = movie.movieID
         WHERE scheduleID = '$schedID'
@@ -67,16 +76,5 @@
             </div>
         </div>
 <?php
-    // }else{
-    //     echo '<div class="container">
-    //     <div class="row">Something went wrong. Please try again.</div></div>';
     }
-
-    // reset sessions
-    // $_SESSION['movieID'] = "";
-    // $_SESSION['schedID'] = "";
-    // $_SESSION['seats'] = [];
-    // $_SESSION['child'] = "";
-    // $_SESSION['adult'] = "";
-    // $_SESSION['senior'] = "";  
 ?>
