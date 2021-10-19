@@ -8,7 +8,7 @@
     // connect to database
     require 'partials/connect.php';
     
-    echo $_SESSION['userID'];
+    // echo $_SESSION['userID'];
 
     // get movie id from URL
     $id = strval($_GET['id']);

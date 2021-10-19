@@ -1,5 +1,8 @@
 <!-- include header file -->
-<?php include 'partials/admin-header.php'; ?>
+<?php
+
+    include 'partials/admin-header.php';
+?>
 
 <script>
     function addmovie() {
@@ -31,48 +34,33 @@
 
 <div class="col col-lg-9 content">
     <div id="edit">
-        <form id="addMovie" method="post" action="process-add-movie.php">
-            <div id="add-movie-group" class="form-group">
+        <?php echo $_SESSION['movieHero']; ?>
+        <form id="addMovie" method="post" action="process-add-movie.php" enctype="multipart/form-data">
+            <div class="form-group">
                 <label for="movTitle">Title</label>
                 <input type="text" class="form-control" id="movTitle" name="movTitle" required />
             </div>
-
-            <div id="add-movie-group" class="form-group">
+            <div class="form-group">
                 <label for="movDescription">Description</label>
                 <input type="text" textarea="text" class="form-control" id="movDescription" name="movDescription" required />
             </div>
-
-            <div id="add-movie-group" class="form-group">
+            <div class="form-group">
                 <label for="movDirector">Director/s</label>
                 <input type="text" class="form-control" id="movDirector" name="movDirector" required />
             </div>
-
-            <div id="add-movie-group" class="form-group">
+            <div class="form-group">
                 <label for="movActor">Actor/s</label>
                 <input type="text" class="form-control" id="movActor" name="movActor"  required />
             </div>
-
-            <div id="add-movie-group" class="form-group">
-                <label for="movDuration">Duration</label>
-                <input type="text" class="form-control" id="movDuration" name="movDuration" required />
-            </div>
-            <div id="add-movie-group" class="form-group">
-                <span><button class="btn btn-mubi">
-                        File Upload
-                    </button></span> </div>
-            <div id="add-movie-group" class="form-group">
-                <span><button class="btn btn-mubi">
-                        File Upload
-                    </button></span> </div>
-            <div id="add-movie-group" class="form-group">
+            <div class="form-group">
                 <label for="trailer">Trailer URL</label>
                 <input type="text" class="form-control" id="trailer" name="trailer" required />
             </div>
-            <div id="add-movie-group" class="custom-control custom-checkbox">
+            <div class="custom-control custom-checkbox">
                 <input type="checkbox" class="custom-control-input" id="isFeature" name="isFeature" />
                 <label class="custom-control-label" for="isFeature">Feature on Homepage</label>
             </div>
-            <div id="edit-admin-group" class="form-group">
+            <div class="form-group">
                 <label for="isScreening">Change Role</label>
                 <form action="" method="">
                     <select class="form-control" name="isScreening" id="isScreening">
