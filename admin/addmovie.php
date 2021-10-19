@@ -7,18 +7,15 @@
         var movId = "M" + Math.floor(100 + Math.random() * 900)
 
         var isFeatureValue = 0;
-        if(document.getElementById("isFeature").checked){
+        if (document.getElementById("isFeature").checked) {
             isFeatureValue = 1;
         }
 
-        var isScreeningValue = 0;
-        if(document.getElementById("isScreening").checked){
-            isScreeningValue = 1;
-        }
+        var screeningStatus = document.getElementById("isScreening").value;
 
         addHidden(document.getElementById("addMovie"), "movieID", movId);
         addHidden(document.getElementById("addMovie"), "isFeatured", isFeatureValue);
-        addHidden(document.getElementById("addMovie"), "isScreening", isScreeningValue);
+        addHidden(document.getElementById("addMovie"), "isScreening", screeningStatus);
 
         document.getElementById("addMovie").submit();
     }
@@ -82,12 +79,22 @@
                         <input type="text" class="form-control" id="trailer" name="trailer" value="<?php echo $thisUser->userLast; ?>" required />
                     </div>
                     <div id="add-movie-group" class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="isFeature" name="isFeature" value="<?php echo $thisUser->userLast; ?>" required />
+                        <input type="checkbox" class="custom-control-input" id="isFeature" name="isFeature" value="<?php echo $thisUser->userLast; ?>" />
                         <label class="custom-control-label" for="isFeature">Feature on Homepage</label>
                     </div>
-                    <div id="add-movie-group" class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="isScreening" name="isScreening" value="<?php echo $thisUser->userLast; ?>" required />
+                    <!-- <div id="add-movie-group" class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="isScreening" name="isScreening" value="<?php echo $thisUser->userLast; ?>" />
                         <label class="custom-control-label" for="isScreening">Now Showing</label>
+                    </div> -->
+                    <div id="edit-admin-group" class="form-group">
+                        <label for="isScreening">Change Role</label>
+                        <form action="" method="">
+                            <select class="form-control" name="isScreening" id="isScreening">
+                                <option value="0">Upcoming</option>
+                                <option value="1">Now Showing</option>
+                                <option value="2">Past Movie</option>
+                            </select>
+                        </form>
                     </div>
                 </form>
 

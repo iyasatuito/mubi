@@ -17,7 +17,7 @@
     // set message depending on result
     if(!empty($mysqli->query($sql))){
         // echo json_encode('You have successfully updated your account.');
-        header('Location: ' . $_SERVER['HTTP_REFERER']);
+        header('Location: ' . 'users.php');
     }else{
         echo json_encode('Cannot login. Please try again.');
     }
