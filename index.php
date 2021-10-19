@@ -18,7 +18,7 @@
     $moviebanners = $mysqli->query("SELECT movieHero, movieID FROM movie WHERE isFeatured=1");
 
     // query movies
-    $movies = $mysqli->query("SELECT * FROM movie WHERE isScreening=1");
+    $movies = $mysqli->query("SELECT * FROM movie");
 
     // set banner counter
     $banner = 0;
@@ -40,7 +40,6 @@
                         echo '<a href="movie.php?id='.$moviebanner->movieID.'"><img src="assets/img/movies/'.$moviebanner->movieHero.'" class="d-block w-100" alt="..."></a>';
                         echo '</div>';
                     }
-
                     $banner = $banner + 1;
                 }
             ?>
@@ -58,7 +57,7 @@
     <div class="container">
         <div class="row">
             <div class="col col-sm-6">
-                <div class="home-nav mustard-bg" id="nowShowing">
+                <div class="home-nav" id="nowShowing">
                     NOW SHOWING
                 </div>
             </div>
@@ -87,9 +86,6 @@
                     }
                 ?>
             </div>
-        <?php
-            
-        ?>          
         </div>
     </div>
 

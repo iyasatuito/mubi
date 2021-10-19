@@ -126,4 +126,4 @@
     </div>
 
 <!-- include footer file -->
-<?php include 'partials/admin-footer.php'; ?>
+<?php include 'partials/footer.php'; ?>
