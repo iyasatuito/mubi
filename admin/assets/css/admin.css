@@ -120,24 +120,33 @@ margin-bottom: 0;
 margin: 10px 0;
 }
 
-#addMovie {
+#addMovie, #addSchedule {
     width: 80%;
     margin: 0 auto;
 }
 
-#addMovie button {
+button {
     margin-top: 20px;
 }
 
-#addMovie .form-group {
+.form-group {
     margin-bottom: 20px;
 }
 
-#addMovie .custom-control {
+.custom-control {
     margin-bottom: 20px;
 }
 
 #movies .feedback {
     padding-left: 5%;
     padding-bottom: 30px;
+}
+
+#home .container {
+    width: 90%;
+}
+
+#home .dashboard-details {
+    margin-bottom: 30px;
+    width: 100%;
 }
