@@ -5,7 +5,7 @@
     function editMovie() {
 
         var isFeatureValue = 0;
-        if(document.getElementById("isFeature").checked){
+        if (document.getElementById("isFeature").checked) {
             isFeatureValue = 1;
         }
 
@@ -26,7 +26,7 @@
     }
 </script>
 
-<?php 
+<?php
 
 require 'partials/connect.php';
 
@@ -81,23 +81,30 @@ $result = $getMovie->fetch_object();
                         <input type="text" class="form-control" id="trailer" name="trailer" value="<?php echo $result->movieTrailer; ?>" required />
                     </div>
                     <div id="edit-movie-group" class="form-group">
-                        <input type="checkbox" id="isFeature" name="isFeature" value="<?php echo $result->isFeature; ?>"  />
+                        <input type="checkbox" id="isFeature" name="isFeature" value="<?php echo $result->isFeature; ?>" />
                         <label class="custom-control-label" for="isFeature">Feature on Homepage</label>
                     </div>
                     <!-- <div id="edit-movie-group" class="form-group">
-                        <input type="checkbox" id="isScreening" name="isScreening" value="<?php //echo $result->isScreening; ?>" />
+                        <input type="checkbox" id="isScreening" name="isScreening" value="<?php //echo $result->isScreening; 
+                                                                                            ?>" />
                         <label class="custom-control-label" for="isScreening">Now Showing</label>
                     </div> -->
                     <div id="edit-movie-group" class="form-group">
-                            <label for="isScreening">Change Role</label>
-                            <form action="" method="">
-                                <select class="form-control" name="isScreening" id="isScreening">
-                                    <option value="0" <?php if($result->isScreening == '0'){echo("selected");}?>>Upcoming</option>
-                                    <option value="1" <?php if($result->isScreening == '1'){echo("selected");}?>>Now Showing</option>
-                                    <option value="2" <?php if($result->isScreening == '2'){echo("selected");}?>>Past Movie</option>
-                                </select>
-                            </form>
-                        </div>
+                        <label for="isScreening">Change Role</label>
+                        <form action="" method="">
+                            <select class="form-control" name="isScreening" id="isScreening">
+                                <option value="0" <?php if ($result->isScreening == '0') {
+                                                        echo ("selected");
+                                                    } ?>>Upcoming</option>
+                                <option value="1" <?php if ($result->isScreening == '1') {
+                                                        echo ("selected");
+                                                    } ?>>Now Showing</option>
+                                <option value="2" <?php if ($result->isScreening == '2') {
+                                                        echo ("selected");
+                                                    } ?>>Past Movie</option>
+                            </select>
+                        </form>
+                    </div>
                 </form>
 
                 <span><button class="btn btn-mubi" onclick="editMovie()">
@@ -105,6 +112,12 @@ $result = $getMovie->fetch_object();
                     </button></span>
                 <br>
             </div>
+            <?php
+            if ($_SESSION['feedback'] != "") {
+                echo '<div class="feedback">' . $_SESSION['feedback'] . '</div>';
+            }
+            $_SESSION['feedback'] = "";
+            ?>
         </div>
     </div>
 </div>
