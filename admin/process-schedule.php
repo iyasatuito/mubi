@@ -21,7 +21,7 @@
     if(!empty($mysqli->query($sql2))){
         $_SESSION['feedback'] = "You have successfully added a schedule.";
     } else {
-        $_SESSION['feedback'] = "Sorry, something went wring.";
+        $_SESSION['feedback'] = "Sorry, something went wrong.";
     }
 
      // redirect to review page

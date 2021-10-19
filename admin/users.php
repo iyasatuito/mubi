@@ -23,6 +23,13 @@ mysqli_close($mysqli);
 
 <div class="col col-lg-9 content">
     <div id="movies">
+    <?php
+    if($_SESSION['feedback']!=""){
+        echo '<tr><div class="feedback">'.$_SESSION['feedback'].'</div></tr>';
+    }
+
+    $_SESSION['feedback']="";
+    ?>
         <!-- content -->
         <table class="table-overall">
             <thead>
@@ -64,12 +71,6 @@ mysqli_close($mysqli);
             </tbody>
         </table>
     </div>
-    <?php
-        if ($_SESSION['feedback'] != "") {
-            echo '<div class="feedback">' . $_SESSION['feedback'] . '</div>';
-        }
-        $_SESSION['feedback'] = "";
-        ?>
 </div>
 
 <!-- include footer file -->
