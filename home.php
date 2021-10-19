@@ -10,6 +10,9 @@
     $_SESSION['child'] = "";
     $_SESSION['adult'] = "";
     $_SESSION['senior'] = "";   
+    $_SESSION['signUpSuccess'] = "";   
+    $_SESSION['passwordError'] = ""; 
+    $_SESSION['loginError'] = "";   
 
     // echo $_SESSION['userRole'];
     

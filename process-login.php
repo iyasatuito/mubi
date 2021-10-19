@@ -16,8 +16,9 @@
     
             $_SESSION['userRole'] = $results->userRole;
             $_SESSION['userID'] = $results->userID;
-            header("location: home.php");
+            header("location: home.php"); //home
         }else{
-            echo json_encode('Cannot login. Please try again.');
+            $_SESSION['loginError'] = true;
+            header('Location: ' . $_SERVER['HTTP_REFERER']);
         }
 ?>

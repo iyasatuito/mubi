@@ -24,10 +24,12 @@
             $_SESSION['userID'] = $userID;
             header("location: index.php");
         }else{
-            echo json_encode('Cannot login. Please try again.');
+            $_SESSION['signUpSuccess'] = false;
+             header('Location: ' . $_SERVER['HTTP_REFERER']);
         }
     } else {
-        echo json_encode('Passwords do not match');
+        $_SESSION['passwordError'] = true;
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
     }
 
 ?>
