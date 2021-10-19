@@ -64,13 +64,13 @@ $thisUser = $getUser->fetch_object();
                                 <option value="1" <?php if($thisUser->userRole == '1'){echo("selected");}?>>Admin</option>
                             </select>
                         </form>
-                    </div>
-                </form>
-
-                <span><button class="btn btn-mubi" onclick="editAdminAccount()">
+                        <span><button class="btn btn-mubi" onclick="editAdminAccount()">
                         Update
                     </button></span>
-                <br>
+                    </div>
+
+                    
+                </form>
             </div>
         </div>
     </div>

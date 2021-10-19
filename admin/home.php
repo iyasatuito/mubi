@@ -45,31 +45,31 @@ mysqli_close($mysqli);
             <div class="row">
                 <div class="col col-lg-4">
                     <div class="dashboard-details">
-                        <h1><?php echo $pastMovies; ?></h1>
+                        <h2><?php echo $pastMovies; ?></h2>
                         <p class="text-medium">PAST MOVIES</p>
                     </div>
                 </div>
                 <div class="col col-lg-4">
                     <div class="dashboard-details">
-                        <h1><?php echo $nowShowing; ?></h1>
+                        <h2><?php echo $nowShowing; ?></h2>
                         <p class="text-medium">NOW SHOWING</p>
                     </div>
                 </div>
                 <div class="col col-lg-4">
                     <div class="dashboard-details">
-                        <h1><?php echo $upcomingMovies; ?></h1>
+                        <h2><?php echo $upcomingMovies; ?></h2>
                         <p class="text-medium">UPCOMING</p>
                     </div>
                 </div>
                 <div class="col col-lg-8">
                     <div class="dashboard-details">
-                        <h1>$<?php echo $totalSales;?></h1>
+                        <h2>$<?php echo $totalSales;?></h2>
                         <p class="text-medium">TOTAL SALES</p>
                     </div>
                 </div>
                 <div class="col col-lg-4">
                     <div class="dashboard-details">
-                        <h1><?php echo $ticketBooked; ?></h1>
+                        <h2><?php echo $ticketBooked; ?></h2>
                         <p class="text-medium">TICKETS BOOKED</p>
                     </div>
                 </div>
