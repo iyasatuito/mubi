@@ -48,6 +48,7 @@
     $_SESSION['child'] = "";
     $_SESSION['adult'] = "";
     $_SESSION['senior'] = "";   
+	$_SESSION['feedback'] = "";   
 	
 	?>
 

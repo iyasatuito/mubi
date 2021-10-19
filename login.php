@@ -12,12 +12,12 @@
         <form id="loginAccount" method="post" action="process-login.php">
             <div id="login-group" class="form-group">
                 <label for="email">Email</label>
-                <input type="text" class="form-control" id="email" name="email" value="<?php echo $thisUser->userFirst; ?>" required />
+                <input type="text" class="form-control" id="email" name="email" required />
             </div>
 
             <div id="login-group" class="form-group">
                 <label for="password">Password</label>
-                <input type="password" class="form-control" id="password" name="password" value="<?php echo $thisUser->userLast; ?>" required />
+                <input type="password" class="form-control" id="password" name="password" required />
             </div>
         </form>
 
