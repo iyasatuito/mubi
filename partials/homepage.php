@@ -4,7 +4,6 @@
             <?php
                 while($moviebanner = $moviebanners->fetch_object()) {
                     if($banner==0){
-                        echo 'hello';
                         echo '<div class="carousel-item active">';
                         echo '<a href="movie.php?id='.$moviebanner->movieID.'"><img src="assets/img/movies/'.$moviebanner->movieHero.'" class="d-block w-100" alt="..."></a>';
                         echo '</div>';

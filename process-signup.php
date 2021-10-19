@@ -21,8 +21,8 @@
      // set message depending on result
      if(!empty($results)){ 
 
-        $_SESSION['userRole'] = $userID;
-        $_SESSION['userID'] = $userRole;
+        $_SESSION['userID'] = $userID;
+        $_SESSION['userRole'] = $userRole;
             header("location: home.php");
         }else{
             $_SESSION['signUpSuccess'] = false;

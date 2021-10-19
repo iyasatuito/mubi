@@ -41,9 +41,10 @@
 
     // assign seatnames
     for ($x = 0; $x <= 132; $x++){
-        $seatNames[] = 'A'.$x+1;
+        $y = $x+1;
+        $seatNames[] = 'A'.$y;
     }
-
+    
     // close database connection
     mysqli_close($mysqli);
 ?>
