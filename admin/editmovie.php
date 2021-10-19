@@ -39,6 +39,7 @@ $result = $getMovie->fetch_object();
 <div class="col col-lg-9 content">
     <div id="edit">
         <div class="container">
+            <h1>Edit Movie</h1>
             <div class="row">
                 <form id="editMovie" method="post" action="process-edit-movie.php">
                     <div id="edit-movie-group" class="form-group">
