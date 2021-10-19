@@ -82,12 +82,12 @@ $cinemaResults = $mysqli->query("SELECT cinemaID, cinemaName FROM cinema");
 
                     <div id="add-movie-group" class="form-group">
                         <label for="scheduleDate">Date</label>
-                        <input type="date" min="2021-10-20" max="2021-12-20" class="form-control" id="scheduleDate" name="scheduleDate" value="<?php echo $thisUser->userLast; ?>" required />
+                        <input type="date" min="2021-10-20" max="2021-12-20" class="form-control" id="scheduleDate" name="scheduleDate" required />
                     </div>
 
                     <div id="add-movie-group" class="form-group">
                         <label for="schedTime">Time</label>
-                        <input type="time" id="appt" min="09:00" max="18:00" class="form-control" id="schedTime" name="schedTime" value="<?php echo $thisUser->userLast; ?>" required />
+                        <input type="time" id="appt" min="09:00" max="18:00" class="form-control" id="schedTime" name="schedTime" />
                     </div>
                 </form>
 
