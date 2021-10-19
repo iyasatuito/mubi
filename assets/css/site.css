@@ -102,8 +102,8 @@ main {
 }
 
 footer {
-    /* background-color: #E1AD01;
-    position: fixed;
+    background-color: #E1AD01;
+    /*position: fixed;
     width: 100%;
     bottom: 0;
     z-index: 0; */
@@ -513,7 +513,10 @@ footer {
     transform: translate(-50%, -50%);
 }
 
-
+#login .btn-mubi,
+#signup .btn-mubi {
+    margin-top: 20px;
+}
 
 /* 
 *

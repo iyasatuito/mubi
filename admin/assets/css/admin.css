@@ -137,9 +137,13 @@ button {
     margin-bottom: 20px;
 }
 
-#movies .feedback {
+.feedback {
     padding-left: 5%;
     padding-bottom: 30px;
+}
+
+#schedule .feedback {
+    padding-left: 10%;
 }
 
 #home .container {

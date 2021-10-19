@@ -85,6 +85,9 @@ $cinemaResults = $mysqli->query("SELECT cinemaID, cinemaName FROM cinema");
                 <label for="schedTime">Time</label>
                 <input type="time" id="appt" min="09:00" max="18:00" class="form-control" id="schedTime" name="schedTime" />
             </div>
+            <button class="btn btn-mubi" onclick="addSchedule()">
+                Submit
+            </button>
         </form>
 
         <button class="btn btn-mubi" onclick="addSchedule()">
