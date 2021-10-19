@@ -33,6 +33,7 @@
 
 <div class="col col-lg-9 content">
     <div id="edit">
+    <h1>Add Movie</h1>
         <?php echo $_SESSION['movieHero']; ?>
         <form id="addMovie" method="post" action="process-add-movie.php" enctype="multipart/form-data">
             <div class="form-group">

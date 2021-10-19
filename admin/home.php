@@ -42,6 +42,7 @@ mysqli_close($mysqli);
 <div class="col col-lg-9 content">
     <div id="home">
         <div class="container">
+        <h1>Dashboard</h1>
             <div class="row">
                 <div class="col col-lg-4">
                     <div class="dashboard-details">

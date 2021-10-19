@@ -44,6 +44,7 @@ $cinemaResults = $mysqli->query("SELECT cinemaID, cinemaName FROM cinema");
 
 <div class="col col-lg-9 content">
     <div id="schedule">
+    <h1>Schedule</h1>
     <?php
     if($_SESSION['feedback']!=""){
         echo '<tr><div class="feedback">'.$_SESSION['feedback'].'</div></tr>';
