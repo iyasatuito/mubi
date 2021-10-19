@@ -55,7 +55,6 @@ $cinemaResults = $mysqli->query("SELECT cinemaID, cinemaName FROM cinema");
                     }
                     ?>
                 </select>
-
             </div>
             <div id="add-movie-group" class="form-group">
                 <label for="cinemaList">Select Cinema</label>
@@ -84,6 +83,13 @@ $cinemaResults = $mysqli->query("SELECT cinemaID, cinemaName FROM cinema");
         <button class="btn btn-mubi" onclick="addSchedule()">
             Submit
         </button>
+        <?php
+        if ($_SESSION['feedback'] != "") {
+            echo '<div class="feedback">' . $_SESSION['feedback'] . '</div>';
+        }
+        $_SESSION['feedback'] = "";
+        ?>
+
     </div>
 </div>
 

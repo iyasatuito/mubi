@@ -19,10 +19,11 @@
     $results = $mysqli->query($sql);
 
      // set message depending on result
-     if(!empty($results)){
-            $_SESSION["loggedin"] = true;
-            $_SESSION['userID'] = $userID;
-            header("location: index.php");
+     if(!empty($results)){ 
+
+        $_SESSION['userRole'] = $userID;
+        $_SESSION['userID'] = $userRole;
+            header("location: home.php");
         }else{
             $_SESSION['signUpSuccess'] = false;
              header('Location: ' . $_SERVER['HTTP_REFERER']);

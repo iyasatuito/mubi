@@ -84,6 +84,12 @@ mysqli_close($mysqli);
                 ?>
             </tbody>
         </table>
+        <?php
+        if ($_SESSION['feedback'] != "") {
+            echo '<div class="feedback">' . $_SESSION['feedback'] . '</div>';
+        }
+        $_SESSION['feedback'] = "";
+        ?>
     </div>
 </div>
 

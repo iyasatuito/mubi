@@ -22,8 +22,13 @@
 
     // set message depending on result
     if(!empty($mysqli->query($sql))){
-        header('Location: ' . 'movies.php');
+        $_SESSION['feedback'] = "You have successfully edited a movie.";
     } else {
-        echo json_encode('Cannot login. Please try again.');
+        $_SESSION['feedback'] = "Failed to update a movie.";
     }
+
+    $host  = $_SERVER['HTTP_HOST'];
+    $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+    $extra = 'movies.php';
+    header("Location: http://$host$uri/$extra");
 ?>
