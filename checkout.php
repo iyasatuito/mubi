@@ -75,23 +75,26 @@
 
                         <div class="step3">
                             <div class="row">
-                                <div class="col col-sm-2 col-md-1">
+                                <!-- <div class="col col-sm-2 col-md-1"> -->
+                                <!-- </div> -->
+                                <!-- <div class="col col-sm-10 col-md-11"> -->
+                                <div class="col">
                                     <div class="number">
                                         3
                                     </div>
-                                </div>
-                                <div class="col col-sm-10 col-md-11">
                                     <div class="subheading">
                                         Customer Info
                                     </div>
-                                    <div>
-                                        <?php echo $user->userFirst . " " . $user->userLast ?>
-                                    </div>
-                                    <div>
-                                        <?php echo $user->userEmail ?>
-                                    </div>
-                                    <div class="btn-container">
-                                        <a href="account.php" class="btn btn-mubi-secondary">Update Details</a>
+                                    <div class="details">
+                                        <div>
+                                            <?php echo $user->userFirst . " " . $user->userLast ?>
+                                        </div>
+                                        <div>
+                                            <?php echo $user->userEmail ?>
+                                        </div>
+                                        <div class="btn-container">
+                                            <a href="account.php" class="btn btn-mubi-secondary">Update Details</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -99,30 +102,35 @@
 
                         <div class="step4">
                             <div class="row">
-                                <div class="col col-sm-2 col-md-1">
+                                <!-- <div class="col col-sm-2 col-md-1">
                                     <div class="number">
                                         4
                                     </div>
-                                </div>
-                                <div class="col col-sm-10 col-md-11">
+                                </div> -->
+                                <div class="col">
+                                    <div class="number">
+                                        4
+                                    </div>
                                     <div class="subheading">
                                         Payment
                                     </div>
-                                    <div>
-                                        <label for="card">
-                                            Card No.
-                                        </label>
-                                    </div>
-                                    <div>
-                                        <input type="number" name="card" id="card">
-                                    </div>
-                                    <div>
-                                        <label for="cvv">
-                                            CVV
-                                        </label>
-                                    </div>
-                                    <div>
-                                        <input type="number" name="cvv" id="cvv">
+                                    <div class="details">
+                                        <div>
+                                            <label for="card">
+                                                Card No.
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <input type="number" name="card" id="card">
+                                        </div>
+                                        <div>
+                                            <label for="cvv">
+                                                CVV
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <input type="number" name="cvv" id="cvv">
+                                        </div>
                                     </div>
                                 </div>
                             </div>

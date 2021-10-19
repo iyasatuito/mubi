@@ -257,9 +257,9 @@ footer {
 */
 
 #booking .container {
-    width: 86%;
+    width: 75%;
     margin: 30px auto;
-    padding-bottom: 100px;
+    padding-bottom: 50px;
 }
 
 #booking .summary-container {
@@ -350,10 +350,13 @@ footer {
     font-size: 3em;
     color: #E1AD01;
     line-height: .2em;
+    padding-right: 10px;
+    display: inline;
 }
 
 #booking .subheading {
     margin-top: 0;
+    display: inline;
 }
 
 #booking .step2 {
@@ -387,6 +390,10 @@ footer {
     padding: 10px 0 20px 0;
 }
 
+#booking .details {
+    padding-top: 20px;
+}
+
 #booking .step4 {
     padding-top: 30px;
 }
@@ -395,6 +402,12 @@ footer {
     margin-bottom: 15px;
     color: #202020;
     width: 60%;
+}
+
+
+#booking .print-btn {
+    width: auto;
+    margin-top: 15px !important;
 }
 /* #pay, .step3, .step4, #back {
     display: none;
@@ -578,5 +591,33 @@ footer {
     #movie .yt-video {
         height: 200px;
     }
+
+    .row {
+        overflow: scroll;
+    }
+
+    #booking .container {
+        padding-bottom: 10px;
+        width: 90%;
+    }
+
+    #booking .summary {
+        margin-bottom: 75px;
+    }
+
+    #booking .details {
+        padding-top: 20px;
+        /* padding-left: 20px; */
+    }
+
+    #booking .step4 {
+        padding-bottom: 40px;
+    }
+
+    #booking .step4 input {
+        width: 100%;
+    }
+
 }
+
 

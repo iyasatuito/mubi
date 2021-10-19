@@ -40,14 +40,12 @@
                 </div>
             </div>
             <div class="row no-print">
-                <div class="col col-lg-8">
+                <div class="col">
                     <div class="description">
                         You have successfully booked your tickets. Save a copy of these e-tickets and scan the QR code upon entry to Mubi cinemas.
                     </div>
-                </div>
-                <div class="col col-lg-4 right">
-                    <button class="btn btn-mubi" onclick="window.print()">
-                        Print
+                    <button class="btn btn-mubi print-btn" onclick="window.print()">
+                        Print Ticket
                     </button>
                 </div>
             </div>
@@ -75,10 +73,10 @@
     }
 
     // reset sessions
-    $_SESSION['movieID'] = "";
-    $_SESSION['schedID'] = "";
-    $_SESSION['seats'] = [];
-    $_SESSION['child'] = "";
-    $_SESSION['adult'] = "";
-    $_SESSION['senior'] = "";  
+    // $_SESSION['movieID'] = "";
+    // $_SESSION['schedID'] = "";
+    // $_SESSION['seats'] = [];
+    // $_SESSION['child'] = "";
+    // $_SESSION['adult'] = "";
+    // $_SESSION['senior'] = "";  
 ?>
