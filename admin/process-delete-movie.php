@@ -13,7 +13,7 @@
     $movID = $result->movieID;
     
       // user movie id to delete schedule and movie
-    $sql2 = $sql = "DELETE FROM schedule WHERE schedule.movieID = '$movID';";
+    $sql2 = "DELETE FROM schedule WHERE schedule.movieID = '$movID';";
     $sql2 .= "DELETE FROM movie WHERE movie.movieID = '$movID'";
     $delete = mysqli_multi_query($mysqli, $sql2);
 	
