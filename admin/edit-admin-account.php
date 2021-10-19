@@ -59,8 +59,8 @@ $thisUser = $getUser->fetch_object();
                     <label for="userRoleList">Change Role</label>
                     <form action="" method="">
                         <select class="form-control" name="userRoleList" id="userRoleList">
-                            <option value="0">Customer</option>
-                            <option value="1">Admin</option>
+                            <option value="0" <?php if($thisUser->userRole == '0'){echo("selected");}?>>Customer</option>
+                            <option value="1" <?php if($thisUser->userRole == '1'){echo("selected");}?>>Admin</option>
                         </select>
                     </form>
                 </div>

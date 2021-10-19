@@ -3,7 +3,26 @@
 
 <script>
     function editMovie() {
+
+        var isFeatureValue = 0;
+        if(document.getElementById("isFeature").checked){
+            isFeatureValue = 1;
+        }
+
+        var screeningStatus = document.getElementById("isScreening").value;
+
+        addHidden(document.getElementById("editMovie"), "isFeatured", isFeatureValue);
+        addHidden(document.getElementById("editMovie"), "isScreening", screeningStatus);
+
         document.getElementById("editMovie").submit();
+    }
+
+    function addHidden(form, key, value) {
+        var input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = key;
+        input.value = value;
+        form.appendChild(input);
     }
 </script>
 
@@ -60,10 +79,24 @@ $result = $getMovie->fetch_object();
                     <label for="trailer">Trailer URL</label>
                     <input type="text" class="form-control" id="trailer" name="trailer" value="<?php echo $result->movieTrailer; ?>" required />
                 </div>
-                <span id="edit-movie-group" class="form-group">
-                    <input type="checkbox" id="isFeature" name="isFeature" value="<?php echo $result->isFeature; ?>" required />
-                    <label for="isFeature">Feature on Homepage</label>
-                </span>
+                <div id="edit-movie-group" class="form-group">
+                    <input type="checkbox" id="isFeature" name="isFeature" value="<?php echo $result->isFeature; ?>"  />
+                    <label class="custom-control-label" for="isFeature">Feature on Homepage</label>
+                </div>
+                <!-- <div id="edit-movie-group" class="form-group">
+                    <input type="checkbox" id="isScreening" name="isScreening" value="<?php //echo $result->isScreening; ?>" />
+                    <label class="custom-control-label" for="isScreening">Now Showing</label>
+                </div> -->
+                <div id="edit-movie-group" class="form-group">
+                        <label for="isScreening">Change Role</label>
+                        <form action="" method="">
+                            <select class="form-control" name="isScreening" id="isScreening">
+                                <option value="0" <?php if($result->isScreening == '0'){echo("selected");}?>>Upcoming</option>
+                                <option value="1" <?php if($result->isScreening == '1'){echo("selected");}?>>Now Showing</option>
+                                <option value="2" <?php if($result->isScreening == '2'){echo("selected");}?>>Past Movie</option>
+                            </select>
+                        </form>
+                    </div>
             </form>
 
             <span><button class="btn btn-mubi" onclick="editMovie()">

@@ -43,7 +43,7 @@ mysqli_close($mysqli);
                     <div class=""><a href="addmovie.php">ADD MOVIE</a></div>
                     <div class=""><a href="schedule.php">SCHEDULE</a></div>
                     <div class=""><a href="users.php">USERS</a></div>
-                    <div class=""><a href="movies.php">LOGOUT</a></div>
+                    <div class=""><a href="process-logout.php">LOGOUT</a></div>
             </div>
             <div class="col-8">
                 <!-- content -->
@@ -61,6 +61,14 @@ mysqli_close($mysqli);
                     <tbody>
                         <?php
                         while ($result = $getmovies->fetch_object()) {
+                            $status = "";
+                            if($result->isScreening == '1'){
+                                $status = "Now Showing";
+                            } elseif($result->isScreening == '0') {
+                                $status = "Upcoming";
+                            } else {
+                                $status = "Past Movie";
+                            }
                         ?>
                             <tr>
                                 <td >
@@ -74,7 +82,7 @@ mysqli_close($mysqli);
                                     <p><?php echo $result->movieActor; ?></p>
                                 </td>
                                 <td >
-                                    <p><?php echo $result->isScreening; ?></p>
+                                    <p><?php echo $status; ?></p>
                                 </td>
                                 <td> <!-- edit movie -->
                                      <a href='editmovie.php?movieTitle=<?php echo $result->movieTitle ?>'><img class="edit-book-space" src="assets/user/edit.png" width="26" height="24"></a>
