@@ -36,8 +36,16 @@ mysqli_close($mysqli);
 
 <div class="col col-lg-9 content">
     <div id="movies">
+    <?php
+    if($_SESSION['feedback']!=""){
+        echo '<tr><div class="feedback">'.$_SESSION['feedback'].'</div></tr>';
+    }
+
+    $_SESSION['feedback']="";
+    ?>
         <!-- content -->
         <table class="table-overall">
+            
             <thead>
                 <!--Headers !-->
                 <tr class="table-head">
@@ -47,6 +55,7 @@ mysqli_close($mysqli);
                     <th>Status</th>
                     <th>Ticket</th>
                 </tr>
+                
             </thead>
             <tbody>
                 <?php
@@ -75,8 +84,8 @@ mysqli_close($mysqli);
                             <p><?php echo $status; ?></p>
                         </td>
                         <td> <!-- edit movie -->
-                            <a href='editmovie.php?movieTitle=<?php echo $result->movieTitle ?>'><img class="edit-book-space" src="assets/user/edit.png" width="26" height="24"></a>
-                            <a href='process-delete-movie.php?movieTitle=<?php echo $result->movieTitle ?>'><img class="edit-book-space" src="assets/user/delete.png" width="24" height="24"></a>
+                            <a href='editmovie.php?movieTitle=<?php echo $result->movieTitle ?>'><?php require 'partials/pen.php'; ?></a>
+                            <a href='process-delete-movie.php?movieTitle=<?php echo $result->movieTitle ?>'><?php require 'partials/trash.php'; ?></a>
                         </td>
                     </tr>
                 <?php

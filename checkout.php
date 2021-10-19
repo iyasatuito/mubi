@@ -93,7 +93,7 @@
                                             <?php echo $user->userEmail ?>
                                         </div>
                                         <div class="btn-container">
-                                            <a href="account.php" class="btn btn-mubi-secondary">Update Details</a>
+                                            <a href="edit-account.php" class="btn btn-mubi-secondary">Update Details</a>
                                         </div>
                                     </div>
                                 </div>

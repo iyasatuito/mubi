@@ -21,8 +21,14 @@
     $sql = "INSERT INTO movie VALUES ('$movID','$movTitle','$movDescription','$movDirector','$movActor','$movDuration', '$movHero', '$movBanner', '$movPoster', '$trailer', '$isFeature', '$isScreening');";
 
     if(!empty($mysqli->query($sql))){          
-        header("location: movies.php");
+        $_SESSION['feedback'] = "Movie successfully added.";
     } else {
-        echo json_encode('Cannot update. Please try again.');
+        $_SESSION['feedback'] = "Cannot add movie. Please try again.";
     }
+
+    // redirect to review page
+    $host  = $_SERVER['HTTP_HOST'];
+    $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+    $extra = 'movies.php';
+    header("Location: http://$host$uri/$extra");
 ?>
