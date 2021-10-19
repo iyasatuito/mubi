@@ -44,6 +44,13 @@ $cinemaResults = $mysqli->query("SELECT cinemaID, cinemaName FROM cinema");
 
 <div class="col col-lg-9 content">
     <div id="schedule">
+    <?php
+    if($_SESSION['feedback']!=""){
+        echo '<tr><div class="feedback">'.$_SESSION['feedback'].'</div></tr>';
+    }
+
+    $_SESSION['feedback']="";
+    ?>
         <form id="addSchedule" method="post" action="process-schedule.php">
             <div id="add-movie-group" class="form-group">
                 <label for="movieList">Select Movie</label>
@@ -83,13 +90,9 @@ $cinemaResults = $mysqli->query("SELECT cinemaID, cinemaName FROM cinema");
             </button>
         </form>
 
-        
-        <?php
-        if ($_SESSION['feedback'] != "") {
-            echo '<div class="feedback">' . $_SESSION['feedback'] . '</div>';
-        }
-        $_SESSION['feedback'] = "";
-        ?>
+        <button class="btn btn-mubi" onclick="addSchedule()">
+            Submit
+        </button>
 
     </div>
 </div>

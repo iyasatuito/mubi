@@ -53,7 +53,7 @@ mysqli_close($mysqli);
                     <th>Director</th>
                     <th>Actor</th>
                     <th>Status</th>
-                    <th>Ticket</th>
+                    <th>Action</th>
                 </tr>
                 
             </thead>
@@ -93,12 +93,6 @@ mysqli_close($mysqli);
                 ?>
             </tbody>
         </table>
-        <?php
-        if ($_SESSION['feedback'] != "") {
-            echo '<div class="feedback">' . $_SESSION['feedback'] . '</div>';
-        }
-        $_SESSION['feedback'] = "";
-        ?>
     </div>
 </div>
 
