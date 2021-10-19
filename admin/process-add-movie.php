@@ -20,10 +20,8 @@
 
     $sql = "INSERT INTO movie VALUES ('$movID','$movTitle','$movDescription','$movDirector','$movActor','$movDuration', '$movBanner', '$movPoster', '$trailer', '$isFeature', '$isScreening');";
 
-    if(!empty($mysqli->query($sql))){
-    // if($sql ->num_rows == 1){            
-        // header("location: welcome.php"); todo verify
-        echo json_encode('You have successfully updated your account.');
+    if(!empty($mysqli->query($sql))){          
+        header("location: movies.php");
     } else {
         echo json_encode('Cannot update. Please try again.');
     }

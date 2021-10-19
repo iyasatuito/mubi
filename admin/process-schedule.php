@@ -19,8 +19,7 @@
 
     // set message depending on result
     if(!empty($mysqli->query($sql2))){
-    
-        echo json_encode('You have successfully added a movie schedule.');
+        header('Location: ' . 'schedule.php');
     } else {
         echo json_encode('Cannot login. Please try again.');
     }
