@@ -44,14 +44,6 @@
         $seatNames[] = 'A'.$x+1;
     }
 
-    // var_dump($seatNames);
-
-    
-
-    
-
-
-
     // close database connection
     mysqli_close($mysqli);
 ?>
@@ -68,46 +60,40 @@
 
                         <!-- <div id="qrcode"></div> -->
                         <div class="step1">
-                            <div class="row">
-                                <div class="col col-sm-2 col-md-1">
-                                    <div class="number">
-                                        1
-                                    </div>
-                                </div>
-                                <div class="col col-sm-10 col-md-11">
-                                    <div class="subheading">
-                                        Select Tickets
-                                    </div>
-                                    <table class="ticket-items">
-                                        <?php
-                                            while($price = $prices->fetch_object()) {
-                                                echo '<tr><td>';
-                                                echo $price->ticketType;
-                                                echo '</td><td>';
-                                                echo '$ '.sprintf('%0.2f', $price->price);
-                                                echo '</td><td><input min="0" class="input-tix" id="input'.$price->ticketType.'" name="'.$price->ticketType.'" type="number"></td></tr>';
-                                            }
-                                        ?>
-                                    </table>
-                                </div>
+                            <div class="number">
+                                1
+                            </div>
+                            <div class="subheading">
+                                Select Tickets
+                            </div>
+                            <div class="details">
+                                <table class="ticket-items">
+                                    <?php
+                                        while($price = $prices->fetch_object()) {
+                                            echo '<tr><td>';
+                                            echo $price->ticketType;
+                                            echo '</td><td>';
+                                            echo '$ '.sprintf('%0.2f', $price->price);
+                                            echo '</td><td><input min="0" class="input-tix" id="input'.$price->ticketType.'" name="'.$price->ticketType.'" type="number"></td></tr>';
+                                        }
+                                    ?>
+                                </table>
                             </div>
                         </div>
                         
                         <div class="step2">
                             <div class="row">
-                                <div class="col col-sm-2 col-md-1">
+                                <div class="col">
                                     <div class="number">
                                         2
                                     </div>
-                                </div>
-                                <div class="col col-sm-10 col-md-11">
                                     <div class="subheading">
                                         Select Seats
                                     </div>
                                     <div class="seats">
                                         <div class="container">
                                             
-                                            <div class="row">
+                                            <div class="row seats-container">
                                     <!-- </div> -->
                                     <!-- <table class="seats"> -->
                                         
