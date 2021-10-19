@@ -20,7 +20,6 @@
 
      // set message depending on result
      if(!empty($results)){
-          
             $_SESSION["loggedin"] = true;
             $_SESSION['userID'] = $userID;
             header("location: index.php");
@@ -29,7 +28,6 @@
         }
     } else {
         echo json_encode('Passwords do not match');
-        // header("location: signup.php");
     }
 
 ?>
