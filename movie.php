@@ -56,13 +56,20 @@
 
     <div class="container">
         <div class="row">
-            <div class="col col-lg-4">
+            <div class="col col-lg-3" id="moviePoster">
                 <img class="poster" src="assets/img/movies/<?php echo $movie->moviePoster ?>" alt="">
             </div>
-            <div class="col col-lg-8">
+            <div class="col col-lg-9">
                 <div class="movie-details">
                     <div class="label">
-                        Now Showing
+                        <?php
+                            if($movie->isScreening==1){
+                                echo 'Now Showing';
+                            }else{
+                                echo 'Coming Soon';
+                            }
+                        ?>
+                        
                     </div>
                     <div class="title">
                     <?php echo $movie->movieTitle ?>

@@ -506,3 +506,77 @@ footer {
         border: 1px solid black;
     }
 }
+
+/*
+*
+* Mobile
+*
+*/
+
+@media only screen and (max-width: 768px) {
+    .btn {
+        font-size: .8rem;
+    }
+    
+    .btn-mubi {
+        padding: 4px 10px;
+    }
+    
+    #home .container,
+    #movie .container {
+        width: 90%;
+    }
+
+    #movie #moviePoster {
+        display: none;
+    }
+    
+    #home .movie-banner .overlay {
+        width: 90%;
+        top: 10px;
+        left: 10px;
+    }
+    
+    #home .movieTitle,
+    #movie .title {
+        font-size: 1.8em;
+        line-height: 1;
+    }
+
+    #movie .title {
+        margin: 15px 0;
+        font-size: 2.4em;
+    }
+
+    #movie .movie-details {
+        padding: 0;
+    }
+    
+    #home .movie-banner .overlay a {
+        margin-top: 10px;
+    }
+    
+    #home .movieDescription {
+        display: none;
+    }
+    
+    #home #comingSoon, #home #nowShowing {
+        padding: 10px;
+        font-size: .8em;
+        line-height: 1;
+    }
+
+    #movie .banner .video-cover {
+        height: 200px;
+    }
+
+    #movie .banner .play-btn {
+        height: 60px;
+        width: 60px;
+    }
+
+    #movie .yt-video {
+        height: 200px;
+    }
+}
+
