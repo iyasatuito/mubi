@@ -49,6 +49,9 @@
     $_SESSION['adult'] = "";
     $_SESSION['senior'] = "";   
 	$_SESSION['feedback'] = "";   
+    $_SESSION['signUpSuccess'] = "";   
+    $_SESSION['passwordError'] = ""; 
+    $_SESSION['loginError'] = "";  
 	
 	?>
 
