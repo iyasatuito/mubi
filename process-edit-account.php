@@ -10,7 +10,7 @@
     $email = $_POST['email'];
     $password = $_POST['password'];
     $confPassword = $_POST['confPassword'];
-    $userID = "U004";
+    $userID = $_SESSION['userID'];
     $userRole = 0; //use 1 for admin
 
     //add checker if password and confrim password matched

@@ -1,12 +1,20 @@
 <!-- include header file -->
-<?php include 'partials/header-guest.php'; ?>
+<?php include 'partials/header.php'; ?>
 
-<?php   
+<?php
+    // setup session variables
+    $_SESSION['movieID'] = "";
+    $_SESSION['schedID'] = "";
+    $userID = $_SESSION['userID'];
+    $_SESSION['seats'] = [];
+    $_SESSION['child'] = "";
+    $_SESSION['adult'] = "";
+    $_SESSION['senior'] = "";   
+
+    // echo $_SESSION['userRole'];
     
     // connect to database
     require 'partials/connect.php';
-
-    // echo $_SESSION['userID'];
 
     // query movie banners
     $moviebanners = $mysqli->query("SELECT movieHero, movieID FROM movie WHERE isFeatured=1");

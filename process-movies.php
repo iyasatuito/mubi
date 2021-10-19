@@ -10,7 +10,7 @@
     // query movies
     if($type=='now'){
         $movies = $mysqli->query("SELECT * FROM movie WHERE isScreening=1");
-    } else {
+    } else if (($type=='upcoming')) {
         $movies = $mysqli->query("SELECT * FROM movie WHERE isScreening=0");
     }
 

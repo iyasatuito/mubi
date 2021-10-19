@@ -37,58 +37,46 @@ while ($booking = $getBookings->fetch_object()) {
 mysqli_close($mysqli);
 ?>
 
-<div id="home">
-    <div class="container">
-        <div class="row">
-            <div class="col-2">
-                <div class="text-md-left"><a href="home.php">DASHBOARD</a></div>
-                <div class=""><a href="movies.php">MOVIES</a></div>
-                <div class=""><a href="addmovie.php">ADD MOVIE</a></div>
-                <div class=""><a href="schedule.php">SCHEDULE</a></div>
-                <div class=""><a href="users.php">USERS</a></div>
-                <div class=""><a href="process-logout.php">LOGOUT</a></div>
-            </div>
-            <div class="col-10">
-                <div class="row">
-                    <div class="col-4">
-                        <div class="dashboard-details">
-                            <h1><?php echo $pastMovies; ?></h1>
-                            <p class="text-medium">PAST MOVIES</p>
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="dashboard-details">
-                            <h1><?php echo $nowShowing; ?></h1>
-                            <p class="text-medium">NOW SHOWING</p>
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="dashboard-details">
-                            <h1><?php echo $upcomingMovies; ?></h1>
-                            <p class="text-medium">UPCOMING</p>
-                        </div>
+<div class="col col-lg-9 content">
+    <div id="home">
+        <div class="container">
+            <div class="row">
+                <div class="col-4">
+                    <div class="dashboard-details">
+                        <h1><?php echo $pastMovies; ?></h1>
+                        <p class="text-medium">PAST MOVIES</p>
                     </div>
                 </div>
-                <div class="row">
-                    <div style="padding:20px"></div>
-                    <div class="col-8">
-                        <div class="dashboard-details">
-                            <h1>$<?php echo $totalSales;?></h1>
-                            <p class="text-medium">TOTAL SALES</p>
-                        </div>
+                <div class="col-4">
+                    <div class="dashboard-details">
+                        <h1><?php echo $nowShowing; ?></h1>
+                        <p class="text-medium">NOW SHOWING</p>
                     </div>
-                    <div class="col-4">
-                        <div class="dashboard-details">
-                            <h1><?php echo $ticketBooked; ?></h1>
-                            <p class="text-medium">TICKETS BOOKED</p>
-                        </div>
+                </div>
+                <div class="col-4">
+                    <div class="dashboard-details">
+                        <h1><?php echo $upcomingMovies; ?></h1>
+                        <p class="text-medium">UPCOMING</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div style="padding:20px"></div>
+                <div class="col-8">
+                    <div class="dashboard-details">
+                        <h1>$<?php echo $totalSales;?></h1>
+                        <p class="text-medium">TOTAL SALES</p>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="dashboard-details">
+                        <h1><?php echo $ticketBooked; ?></h1>
+                        <p class="text-medium">TICKETS BOOKED</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-</div>
 </div>
 
 <!-- include footer file -->

@@ -1,9 +1,14 @@
 <!-- include header file -->
-<?php include 'partials/header.php'; ?>
+<?php
+    // session_start();
+    include 'partials/header.php';    
+?>
 
 <?php
     // connect to database
     require 'partials/connect.php';
+    
+    echo $_SESSION['userID'];
 
     // get movie id from URL
     $id = strval($_GET['id']);
@@ -84,6 +89,9 @@
                         Starring: <?php echo $movie->movieActor ?>
                     </div>
                     
+                    <?php
+                        if($_SESSION['userID']!=""){
+                    ?>
                     <div class="booking">
                         <div class="subheading">
                             SELECT DATE
@@ -99,31 +107,15 @@
                             </select>
                         </form>   
                         
-                        <div id="scheduleContainer"></div>
-                        
-                        <?php
-                            // while($cinema = $cinemas->fetch_object()) {
-                            //     echo '<div class="subheading">';
-                            //     echo $cinema->cinemaName;
-                            //     echo '</div>';
-                            //     echo '<div class="times">';
-
-                            //     while($schedule = $schedules->fetch_object()) {
-                            //         if($cinema->cinemaID==$schedule->cinemaID){
-                            //             echo '<a href="booking.php?id='.$schedule->scheduleID.'"><span class="time">';
-                            //             echo $schedule->scheduleTime;
-                            //             echo '</span></a>';
-                            //         }
-                            //     }
-
-                            //     echo '</div>';
-                            // }
-                        ?>        
+                        <div id="scheduleContainer"></div>  
                     </div>
+                    <?php
+                        }
+                    ?>
                 </div>
             </div>
         </div>
     </div>
 
 <!-- include footer file -->
-<?php include 'partials/admin-footer.php'; ?>
+<?php include 'partials/footer.php'; ?>

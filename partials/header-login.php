@@ -47,20 +47,7 @@
 <main>
 	<nav class="navbar">
 		<div class="container">
-			<a class="nav-link" aria-current="page" href="home.php"><img class="logo" src="assets/img/logo.png" alt="mubi"></a>
-			<div class="menu">
-				<?php
-					if($_SESSION['userID']==""){
-						echo '<a class="nav-link" href="login.php">Login</a>';
-					}else{
-						echo '<a class="nav-link" href="account.php">Account</a>';
-						if($_SESSION['userRole']==1){
-							echo '<a class="nav-link" href="admin/home.php">Admin</a>';
-						}
-						echo '<a class="nav-link" href="admin/process-logout.php">Logout</a>';
-					};
-				?>
-				
-			</div>
+			<a class="nav-link active" aria-current="page" href="home.php"><img class="logo" src="assets/img/logo.png" alt="mubi"></a>
+			<a class="nav-link" href="signup.php">Register</a>
 		</div>
 	</nav>

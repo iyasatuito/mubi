@@ -7,7 +7,7 @@
     require 'partials/connect.php';
 
     // userID
-    $userID = 'U001';
+    $userID = $_SESSION['userID'];
 
     // query selected user
     $getUser = $mysqli->query("SELECT * FROM user WHERE userID = '$userID'");

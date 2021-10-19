@@ -38,6 +38,16 @@
 	<?php
 
 	session_start();
+
+    // setup session variables
+    $_SESSION['movieID'] = "";
+    $_SESSION['schedID'] = "";
+    $_SESSION['userID'] = "";
+    $_SESSION['userRole'] = 2;
+    $_SESSION['seats'] = [];
+    $_SESSION['child'] = "";
+    $_SESSION['adult'] = "";
+    $_SESSION['senior'] = "";   
 	
 	?>
 
@@ -47,20 +57,9 @@
 <main>
 	<nav class="navbar">
 		<div class="container">
-			<a class="nav-link" aria-current="page" href="home.php"><img class="logo" src="assets/img/logo.png" alt="mubi"></a>
+			<a class="nav-link" aria-current="page" href="index.php"><img class="logo" src="assets/img/logo.png" alt="mubi"></a>
 			<div class="menu">
-				<?php
-					if($_SESSION['userID']==""){
-						echo '<a class="nav-link" href="login.php">Login</a>';
-					}else{
-						echo '<a class="nav-link" href="account.php">Account</a>';
-						if($_SESSION['userRole']==1){
-							echo '<a class="nav-link" href="admin/home.php">Admin</a>';
-						}
-						echo '<a class="nav-link" href="admin/process-logout.php">Logout</a>';
-					};
-				?>
-				
+                <a class="nav-link" href="login.php">Login</a>				
 			</div>
 		</div>
 	</nav>

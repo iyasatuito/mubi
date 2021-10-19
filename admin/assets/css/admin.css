@@ -41,3 +41,43 @@ html {
     color: white;
     border: 3px solid white;
 }
+
+main {
+    min-height: 100%;
+}
+
+.sidebar {
+    background-color: #202020;
+    height: 100vh;
+    width: 300px;
+    position: fixed;
+}
+
+.menu-container {
+    padding-left: 30px;
+    padding-top: 50px;
+}
+
+.menu-container div {
+    padding-bottom: 15px;
+}
+
+.menu-container a {
+    color: #fff;
+    text-decoration: none;
+    /* padding-bottom: 40px; */
+    font-family: 'Montserrat', sans-serif;
+}
+
+.menu-container .logo {
+    margin-top: 50px;
+    margin-bottom: 70px;
+    height: 40px;
+}
+
+.content {
+    padding-left: 350px;
+    /* background-color: red; */
+    width: 100%;
+    margin: 100px auto;
+}
