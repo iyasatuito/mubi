@@ -7,7 +7,7 @@
     $lname = $_POST['lname'];
     $email = $_POST['email'];
     $password = $_POST['password'];
-    $id = "U001";
+    $id = $_SESSION['userID'];
 
     // prepare sql statement
     $statement = "UPDATE user

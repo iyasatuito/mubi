@@ -58,6 +58,12 @@ main {
 
 .navbar a {
     color: white;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+}
+
+.navbar .menu {
+    display: flex;
 }
 
 .navbar a:hover {
@@ -96,11 +102,11 @@ main {
 }
 
 footer {
-    background-color: #E1AD01;
-    /* position: fixed; */
-    /* width: 100%; */
-    /* bottom: 0; */
-    /* z-index: 0; */
+    /* background-color: #E1AD01;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    z-index: 0; */
     /* padding-top: 200px; */
 }
 
@@ -473,6 +479,30 @@ footer {
     /* width: 100%; */
     margin-top: 0;
 }
+
+/* 
+*
+* Login
+*
+*/
+
+#login {
+    height: 80vh;
+    width: 100%;
+    position: relative;
+}
+
+#login .login-container,
+#signup .login-container {
+    width: 700px;
+    /* height: 500px; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
 
 /* 
 *

@@ -37,6 +37,11 @@
 	<?php
 
 	session_start();
+
+	if($_SESSION['userRole']!=1){
+		header("Location: ../login.php");
+		exit();
+	}
 	
 	?>
 
@@ -44,9 +49,18 @@
 <body>
 
 <main>
-	<nav class="navbar">
-		<div class="container">
-			<a class="nav-link active" aria-current="page" href="home.php"><img class="logo" src="assets/logo.png" alt="mubi"></a>
-			<a class="nav-link" href="#">Login</a>
-		</div>
-	</nav>
+	<div>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col col-lg-3 sidebar">
+					<div class="menu-container">
+						<a class="logo" aria-current="page" href="home.php"><img class="logo" src="assets/logo.png" alt="mubi"></a>
+						<div class=""><a href="../home.php">VISIT SITE</a></div>            
+						<div class=""><a href="home.php">DASHBOARD</a></div>
+						<div class=""><a href="movies.php">MOVIES</a></div>
+						<div class=""><a href="addmovie.php">ADD MOVIE</a></div>
+						<div class=""><a href="schedule.php">SCHEDULE</a></div>
+						<div class=""><a href="users.php">USERS</a></div>
+						<div class=""><a href="process-logout.php">LOGOUT</a></div>
+					</div>
+				</div>

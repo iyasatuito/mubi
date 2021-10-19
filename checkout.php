@@ -6,7 +6,7 @@
     require 'partials/connect.php';
 
     // userID
-    $userID = 'U002';
+    $userID = $_SESSION['userID'];
     // $schedID = 'S004';
     $schedID = strval($_GET['id']);
     $_SESSION['schedID'] = $schedID;
