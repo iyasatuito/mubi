@@ -8,7 +8,7 @@
     $movTitle = $_POST['movieTitle'];
     $cinemaName = $_POST['cinemaName'];
     $scheduleDate = $_POST['scheduleDate'];
-    $scheduleTime = "9:00:00";
+    $scheduleTime = $_POST['schedTime'];
 
     $sql = "SELECT movieID, cinemaID FROM movie CROSS JOIN cinema WHERE movieTitle = '$movTitle' AND cinemaName = '$cinemaName';";
     $results = $mysqli->query($sql)->fetch_object();
