@@ -36,7 +36,7 @@
     <div class="container">
         <div class="row">
             <div class="col-2">
-                <div class="text-md-left">DASHBOARD</div>
+                <div class="text-md-left"><a href="home.php">DASHBOARD</div>
                 <div class=""><a href="movies.php">MOVIES</a></div>
                 <div class=""><a href="addmovie.php">ADD MOVIE</a></div>
                 <div class=""><a href="schedule.php">SCHEDULE</a></div>

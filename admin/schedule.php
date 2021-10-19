@@ -46,12 +46,12 @@ $cinemaResults = $mysqli->query("SELECT cinemaID, cinemaName FROM cinema");
     <div class="container">
         <div class="row">
             <div class="col-2">
-                <div class="text-md-left">DASHBOARD</div>
+                <div class="text-md-left"><a href="home.php">DASHBOARD</a></div>
                 <div class=""><a href="movies.php">MOVIES</a></div>
                 <div class=""><a href="addmovie.php">ADD MOVIE</a></div>
                 <div class=""><a href="schedule.php">SCHEDULE</a></div>
                 <div class=""><a href="users.php">USERS</a></div>
-                <div class=""><a href="movies.php">LOGOUT</a></div>
+                <div class=""><a href="process-logout.php">LOGOUT</a></div>
             </div>
             <div class="col-10">
                 <form id="addSchedule" method="post" action="process-schedule.php">

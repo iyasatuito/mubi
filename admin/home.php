@@ -46,7 +46,7 @@ mysqli_close($mysqli);
                 <div class=""><a href="addmovie.php">ADD MOVIE</a></div>
                 <div class=""><a href="schedule.php">SCHEDULE</a></div>
                 <div class=""><a href="users.php">USERS</a></div>
-                <div class=""><a href="movies.php">LOGOUT</a></div>
+                <div class=""><a href="process-logout.php">LOGOUT</a></div>
             </div>
             <div class="col-10">
                 <div class="row">

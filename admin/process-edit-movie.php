@@ -21,9 +21,7 @@
 
     // set message depending on result
     if(!empty($mysqli->query($sql))){
-     
-        // header("location: welcome.php"); todo verify
-        echo json_encode('You have successfully updated your account.');
+        header('Location: ' . 'movies.php');
     } else {
         echo json_encode('Cannot login. Please try again.');
     }
