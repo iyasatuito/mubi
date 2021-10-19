@@ -52,7 +52,7 @@ $thisUser = $getUser->fetch_object();
 
                 <div id="edit-admin-group" class="form-group">
                     <label for="password">Change Password</label>
-                    <input type="text" class="form-control" id="password" name="password" value="<?php echo $thisUser->userPassword; ?>" required />
+                    <input type="password" class="form-control" id="password" name="password" value="<?php echo $thisUser->userPassword; ?>" required />
                 </div>
 
                 <div id="edit-admin-group" class="form-group">

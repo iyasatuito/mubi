@@ -40,12 +40,12 @@ function addHidden(form, key, value) {
 
                 <div id="register-group" class="form-group">
                     <label for="password">Password</label>
-                    <input type="text" class="form-control" id="password" name="password" value="<?php echo $thisUser->userLast; ?>" required />
+                    <input type="password" class="form-control" id="password" name="password" value="<?php echo $thisUser->userLast; ?>" required />
                 </div>
 
                 <div id="register-group" class="form-group">
                     <label for="confPassword">Confirm Password</label>
-                    <input type="text" class="form-control" id="confPassword" name="confPassword" value="<?php echo $thisUser->userLast; ?>" required />
+                    <input type="password" class="form-control" id="confPassword" name="confPassword" value="<?php echo $thisUser->userLast; ?>" required />
                 </div>
             </form>
 
